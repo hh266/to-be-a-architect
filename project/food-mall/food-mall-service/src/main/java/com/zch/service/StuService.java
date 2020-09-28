@@ -20,7 +20,7 @@ public interface StuService {
      * 根据id删除学生
      * @param id
      */
-    public void deleteStu(int id);
+    public int deleteStu(int id);
 
     /**
      * 根据id修改学生
@@ -32,5 +32,5 @@ public interface StuService {
     /**
      * 添加学生
      */
-    public void saveStu();
+    public int saveStu();
 }
