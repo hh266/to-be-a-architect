@@ -25,6 +25,6 @@ public class UserServiceImpl implements UserService {
         Example.Criteria userCriteria = userExample.createCriteria();
         userCriteria.andEqualTo("username", name);
         Users user = usersMapper.selectOneByExample(userExample);
-        return user == null;
+        return user != null;
     }
 }
