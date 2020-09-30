@@ -1,5 +1,8 @@
 package com.zch.service;
 
+import com.zch.pojo.Users;
+import com.zch.pojo.bo.UserRegistBO;
+
 /**
  * @author: zch
  * @create: 2020-09-29 20:23
@@ -12,4 +15,11 @@ public interface UserService {
      * @return
      */
     public Boolean queryUserNameIsExist(String name);
+
+    /**
+     * 注册
+     * @param userRegistBO
+     * @return
+     */
+    public Users register(UserRegistBO userRegistBO);
 }
