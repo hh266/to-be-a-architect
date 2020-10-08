@@ -6,12 +6,14 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
+import springfox.documentation.annotations.ApiIgnore;
 
 /**
  * @author zch
  * @date 2020/9/28 15:07
  */
 @RestController
+@ApiIgnore
 @RequestMapping("/stu")
 public class StuController {
 
