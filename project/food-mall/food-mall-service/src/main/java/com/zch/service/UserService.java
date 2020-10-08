@@ -17,9 +17,9 @@ public interface UserService {
     public Boolean queryUserNameIsExist(String name);
 
     /**
-     * 注册
+     * 创建用户
      * @param userRegistBO
      * @return
      */
-    public Users register(UserRegistBO userRegistBO);
+    public Users createUser (UserRegistBO userRegistBO);
 }
