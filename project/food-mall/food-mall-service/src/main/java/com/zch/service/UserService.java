@@ -11,6 +11,7 @@ public interface UserService {
 
     /**
      * 判断用户名是否存在
+     *
      * @param name
      * @return
      */
@@ -18,8 +19,18 @@ public interface UserService {
 
     /**
      * 创建用户
+     *
      * @param userRegistBO
      * @return
      */
-    public Users createUser (UserRegistBO userRegistBO);
+    public Users createUser(UserRegistBO userRegistBO);
+
+    /**
+     * 检索用户密码是否匹配，用于用户登录
+     *
+     * @param username
+     * @param password
+     * @return
+     */
+    public Users queryUserForLogin(String username, String password);
 }

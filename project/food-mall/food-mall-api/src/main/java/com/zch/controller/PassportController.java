@@ -1,6 +1,7 @@
 package com.zch.controller;
 
 import cn.hutool.core.util.StrUtil;
+import com.zch.pojo.Users;
 import com.zch.pojo.bo.UserRegistBO;
 import com.zch.result.CommonResult;
 import com.zch.service.UserService;
@@ -68,5 +69,27 @@ public class PassportController {
         // 4. 实现注册
 
         return CommonResult.success(userService.createUser(userRegistBO));
+    }
+
+    @ApiOperation(value = "用户登录", notes = "用户登录", httpMethod = "POST")
+    @PostMapping("/login")
+    public CommonResult login(@RequestBody UserRegistBO userRegistBO) {
+
+        String username = userRegistBO.getUsername();
+        String password = userRegistBO.getPassword();
+        // 0. 判断密码和用户名不为空
+        if (StrUtil.isBlank(username) || StrUtil.isBlank(password)) {
+            return CommonResult.validateFailed("用户名或密码不能为空！");
+        }
+
+
+        // 1. 实现注册
+        Users userResult = userService.queryUserForLogin(username, password);
+
+        if (userResult == null) {
+            return CommonResult.validateFailed("用户名或密码不正确！");
+        }
+
+        return CommonResult.success(userResult);
     }
 }
