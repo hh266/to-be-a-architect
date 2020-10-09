@@ -1,6 +1,9 @@
 package com.zch.controller;
 
 import cn.hutool.core.util.StrUtil;
+import cn.hutool.json.JSONUtil;
+import com.zch.Utils.CookieUtils;
+import com.zch.Utils.JsonUtils;
 import com.zch.pojo.Users;
 import com.zch.pojo.bo.UserRegistBO;
 import com.zch.result.CommonResult;
@@ -9,6 +12,9 @@ import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
+
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
 
 /**
  * @author: zch
@@ -73,7 +79,9 @@ public class PassportController {
 
     @ApiOperation(value = "用户登录", notes = "用户登录", httpMethod = "POST")
     @PostMapping("/login")
-    public CommonResult login(@RequestBody UserRegistBO userRegistBO) {
+    public CommonResult login(@RequestBody UserRegistBO userRegistBO,
+                              HttpServletRequest request,
+                              HttpServletResponse response) {
 
         String username = userRegistBO.getUsername();
         String password = userRegistBO.getPassword();
@@ -89,6 +97,8 @@ public class PassportController {
         if (userResult == null) {
             return CommonResult.validateFailed("用户名或密码不正确！");
         }
+
+        CookieUtils.setCookie(request, response, "user", JsonUtils.objectToJson(userResult), true);
 
         return CommonResult.success(userResult);
     }

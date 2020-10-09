@@ -7,6 +7,7 @@ import com.zch.mapper.UsersMapper;
 import com.zch.pojo.Users;
 import com.zch.pojo.bo.UserRegistBO;
 import com.zch.service.UserService;
+import org.apache.ibatis.jdbc.Null;
 import org.n3r.idworker.Sid;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -76,6 +77,24 @@ public class UserServiceImpl implements UserService {
         userCriteria.andEqualTo("username", username);
         userCriteria.andEqualTo("password", SecureUtil.md5(password));
         Users user = usersMapper.selectOneByExample(userExample);
+        user = setNullProperty(user);
+        return user;
+    }
+
+
+    /**
+     * 过滤用户隐私信息
+     *
+     * @param user
+     * @return
+     */
+    private Users setNullProperty(Users user) {
+        user.setRealname(null);
+        user.setPassword(null);
+        user.setBirthday(null);
+        user.setUpdatedTime(null);
+        user.setEmail(null);
+        user.setMobile(null);
         return user;
     }
 }
