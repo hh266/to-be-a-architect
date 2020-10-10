@@ -103,4 +103,14 @@ public class PassportController {
 
         return CommonResult.success(userResult);
     }
+
+
+    @ApiOperation(value = "用户退出登录", notes = "用户退出登录", httpMethod = "POST")
+    @PostMapping("/logout")
+    public CommonResult logout(@RequestBody String userId,
+                               HttpServletRequest request,
+                               HttpServletResponse response) {
+        CookieUtils.deleteCookie(request, response, "user");
+        return CommonResult.success();
+    }
 }
