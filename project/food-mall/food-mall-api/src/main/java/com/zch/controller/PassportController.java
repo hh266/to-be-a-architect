@@ -85,11 +85,11 @@ public class PassportController {
 
         String username = userRegistBO.getUsername();
         String password = userRegistBO.getPassword();
+
         // 0. 判断密码和用户名不为空
         if (StrUtil.isBlank(username) || StrUtil.isBlank(password)) {
             return CommonResult.validateFailed("用户名或密码不能为空！");
         }
-
 
         // 1. 实现注册
         Users userResult = userService.queryUserForLogin(username, password);
@@ -98,6 +98,7 @@ public class PassportController {
             return CommonResult.validateFailed("用户名或密码不正确！");
         }
 
+        // 2. 添加cookie
         CookieUtils.setCookie(request, response, "user", JsonUtils.objectToJson(userResult), true);
 
         return CommonResult.success(userResult);
