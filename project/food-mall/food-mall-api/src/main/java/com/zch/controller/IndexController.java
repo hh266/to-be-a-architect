@@ -6,8 +6,10 @@ import com.zch.service.CarouselService;
 import com.zch.service.CategoryService;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
+import io.swagger.annotations.ApiParam;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -26,6 +28,7 @@ public class IndexController {
 
     @Autowired
     private CategoryService categoryService;
+
     /**
      * 获取轮播图
      *
@@ -43,9 +46,27 @@ public class IndexController {
      *
      * @return
      */
-    @ApiOperation(value = "查询所有一级商品分类", notes = "查询所有一级商品分类", httpMethod = "GET")
+    @ApiOperation(value = "查询所有商品一级分类", notes = "查询所有商品一级分类", httpMethod = "GET")
     @GetMapping("/cats")
     public CommonResult cats() {
         return CommonResult.success(categoryService.queryAllRootLevelCat());
     }
+
+
+    /**
+     * 获取 商品子分类
+     *
+     * @return
+     */
+    @ApiOperation(value = "获取商品子分类", notes = "获取商品子分类", httpMethod = "GET")
+    @GetMapping("/subCat/{rootCatId}")
+    public CommonResult subCat(
+            @ApiParam(name = "rootCatId", value = "一级分类id", required = true)
+            @PathVariable Integer rootCatId ) {
+        if (rootCatId == null){
+            CommonResult.validateFailed();
+        }
+        return CommonResult.success(categoryService.getSubCatList(rootCatId));
+    }
+
 }
