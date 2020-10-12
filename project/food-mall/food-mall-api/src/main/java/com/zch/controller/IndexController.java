@@ -69,4 +69,20 @@ public class IndexController {
         return CommonResult.success(categoryService.getSubCatList(rootCatId));
     }
 
+    /**
+     * 获取 一级分类下6条最新商品数
+     *
+     * @return
+     */
+    @ApiOperation(value = "一级分类下6条最新商品数", notes = "一级分类下6条最新商品数", httpMethod = "GET")
+    @GetMapping("/sixNewItems/{rootCatId}")
+    public CommonResult sixNewItems(
+            @ApiParam(name = "rootCatId", value = "一级分类id", required = true)
+            @PathVariable Integer rootCatId ) {
+        if (rootCatId == null){
+            CommonResult.validateFailed();
+        }
+        return CommonResult.success(categoryService.getSixNewItemsLazy(rootCatId));
+    }
+
 }
