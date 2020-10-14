@@ -16,6 +16,7 @@ public interface ItemService {
 
     /**
      * 通过商品id 获得商品详情
+     *
      * @param itemId
      * @return
      */
@@ -23,6 +24,7 @@ public interface ItemService {
 
     /**
      * 通过商品id 获得商品图片
+     *
      * @param itemId
      * @return
      */
@@ -30,6 +32,7 @@ public interface ItemService {
 
     /**
      * 通过商品id 获得商品规格
+     *
      * @param itemId
      * @return
      */
@@ -37,8 +40,18 @@ public interface ItemService {
 
     /**
      * 通过商品id 获得商参数
+     *
      * @param itemId
      * @return
      */
     public ItemsParam getItemParam(String itemId);
+
+    /**
+     * 获取商品不同等级的评论数量
+     *
+     * @param itemId
+     * @param level
+     * @return
+     */
+    public Integer getItemCommentLevelCounts(String itemId, Integer level);
 }

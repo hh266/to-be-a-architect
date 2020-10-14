@@ -1,6 +1,8 @@
 package com.zch.controller;
 
 import cn.hutool.core.util.StrUtil;
+import com.zch.enums.ItemCommentLevel;
+import com.zch.pojo.vo.ItemCommentLevelCountsVO;
 import com.zch.pojo.vo.ItemVO;
 import com.zch.result.CommonResult;
 import com.zch.service.ItemService;
@@ -46,5 +48,23 @@ public class ItemController {
         return CommonResult.success(itemVO);
     }
 
+
+    @ApiOperation(value = "获取商品评论数", notes = "获取商品不同级别的评论数", httpMethod = "GET")
+    @GetMapping("/commentLevel")
+    public CommonResult commentLevel(
+            @ApiParam(name = "itemId", value = "商品id", required = true) String itemId){
+
+        if(StrUtil.isBlank(itemId)){
+            CommonResult.validateFailed("商品id不能为空");
+        }
+
+        ItemCommentLevelCountsVO countsVO = new ItemCommentLevelCountsVO(
+                itemService.getItemCommentLevelCounts(itemId, ItemCommentLevel.goodLevel.type),
+                itemService.getItemCommentLevelCounts(itemId, ItemCommentLevel.normalLevel.type),
+                itemService.getItemCommentLevelCounts(itemId, ItemCommentLevel.badLevel.type)
+        );
+
+        return CommonResult.success(countsVO);
+    }
 
 }

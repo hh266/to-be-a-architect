@@ -1,13 +1,7 @@
 package com.zch.service.impl;
 
-import com.zch.mapper.ItemsImgMapper;
-import com.zch.mapper.ItemsMapper;
-import com.zch.mapper.ItemsParamMapper;
-import com.zch.mapper.ItemsSpecMapper;
-import com.zch.pojo.Items;
-import com.zch.pojo.ItemsImg;
-import com.zch.pojo.ItemsParam;
-import com.zch.pojo.ItemsSpec;
+import com.zch.mapper.*;
+import com.zch.pojo.*;
 import com.zch.service.ItemService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -33,6 +27,8 @@ public class ItemServiceImpl implements ItemService {
     private ItemsSpecMapper itemsSpecMapper;
     @Autowired
     private ItemsParamMapper itemsParamMapper;
+    @Autowired
+    private ItemsCommentsMapper itemsCommentsMapper;
 
 
     /**
@@ -93,5 +89,21 @@ public class ItemServiceImpl implements ItemService {
         criteria.andEqualTo("itemId",itemId);
 
         return itemsParamMapper.selectOneByExample(example);
+    }
+
+    /**
+     * 获取商品不同等级的评论数量
+     *
+     * @param itemId
+     * @param level
+     * @return
+     */
+    @Transactional(propagation = Propagation.SUPPORTS)
+    @Override
+    public Integer getItemCommentLevelCounts(String itemId, Integer level) {
+        ItemsComments itemsComments = new ItemsComments();
+        itemsComments.setItemId(itemId);
+        itemsComments.setCommentLevel(level);
+        return itemsCommentsMapper.selectCount(itemsComments);
     }
 }
