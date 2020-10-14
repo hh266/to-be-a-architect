@@ -2,6 +2,7 @@ package com.zch.service.impl;
 
 import com.zch.mapper.*;
 import com.zch.pojo.*;
+import com.zch.pojo.vo.ItemsCommentVO;
 import com.zch.service.ItemService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -9,7 +10,9 @@ import org.springframework.transaction.annotation.Propagation;
 import org.springframework.transaction.annotation.Transactional;
 import tk.mybatis.mapper.entity.Example;
 
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 /**
  * @description:
@@ -29,6 +32,8 @@ public class ItemServiceImpl implements ItemService {
     private ItemsParamMapper itemsParamMapper;
     @Autowired
     private ItemsCommentsMapper itemsCommentsMapper;
+    @Autowired
+    private ItemsMapperCustom itemsMapperCustom;
 
 
     /**
@@ -105,5 +110,21 @@ public class ItemServiceImpl implements ItemService {
         itemsComments.setItemId(itemId);
         itemsComments.setCommentLevel(level);
         return itemsCommentsMapper.selectCount(itemsComments);
+    }
+
+    /**
+     * 获取商品不同等级的评论数量
+     *
+     * @param itemId
+     * @param level
+     * @return
+     */
+    @Transactional(propagation = Propagation.SUPPORTS)
+    @Override
+    public List<ItemsCommentVO> getItemCommentList(String itemId, Integer level) {
+        Map map = new HashMap();
+        map.put("itemId",itemId);
+        map.put("level",level);
+        return itemsMapperCustom.getItemsCommonsList(map);
     }
 }

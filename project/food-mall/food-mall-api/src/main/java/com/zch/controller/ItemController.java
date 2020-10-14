@@ -67,4 +67,15 @@ public class ItemController {
         return CommonResult.success(countsVO);
     }
 
+    @ApiOperation(value = "获取商品评论列表", notes = "获取商品列表", httpMethod = "GET")
+    @GetMapping("/comments")
+    public CommonResult comments(String itemId, Integer level){
+
+        if(StrUtil.isBlank(itemId)){
+            CommonResult.validateFailed("商品id不能为空");
+        }
+
+        return CommonResult.success(itemService.getItemCommentList(itemId, level));
+    }
+
 }

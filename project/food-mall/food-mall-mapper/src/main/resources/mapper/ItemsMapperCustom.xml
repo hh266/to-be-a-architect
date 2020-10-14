@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.zch.mapper.ItemsMapperCustom">
+
+    <resultMap id="myNewItemsCommonsVO" type="com.zch.pojo.vo.ItemsCommentVO">
+        <result column="specName" property="specName"/>
+        <result column="content" property="content"/>
+        <result column="createdTime" property="createdTime"/>
+        <result column="nickname" property="nickname"/>
+        <result column="userFace" property="userFace"/>
+    </resultMap>
+
+    <select id="getItemsCommonsList" resultMap="myNewItemsCommonsVO" parameterType="Map">
+        SELECT
+            items_comments.sepc_name AS specName,
+            items_comments.content AS content,
+            items_comments.created_time AS createdTime,
+            users.nickname AS nickname,
+            users.face AS userFace
+        FROM
+            items_comments
+            LEFT JOIN users ON items_comments.user_id = users.id
+        WHERE
+            items_comments.item_id = #{paramsMap.itemId}
+        <if test="paramsMap.level != null and paramsMap.level != ''">
+            AND items_comments.comment_level = #{paramsMap.level}
+        </if>
+        ORDER BY
+            items_comments.created_time DESC;
+    </select>
+</mapper>
