@@ -2,6 +2,7 @@ package com.zch.service.impl;
 
 import com.github.pagehelper.PageHelper;
 import com.github.pagehelper.PageInfo;
+import com.zch.Utils.DesensitizationUtil;
 import com.zch.Utils.PagedGridResult;
 import com.zch.mapper.*;
 import com.zch.pojo.*;
@@ -133,6 +134,10 @@ public class ItemServiceImpl implements ItemService {
         PageHelper.startPage(page, pageSize);
 
         List<ItemsCommentVO> list = itemsMapperCustom.getItemsCommonsList(map);
+
+        for (ItemsCommentVO vo: list) {
+                vo.setNickname(DesensitizationUtil.commonDisplay(vo.getNickname()));
+        }
 
         return getPageInfo(list, page);
     }
