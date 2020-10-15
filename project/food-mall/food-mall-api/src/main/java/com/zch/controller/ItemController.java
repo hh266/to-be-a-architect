@@ -89,4 +89,22 @@ public class ItemController extends BaseController{
         return CommonResult.success(itemService.getItemCommentList(itemId, level, page, pageSize));
     }
 
+    @ApiOperation(value = "搜索商品", notes = "通过关键词搜索商品", httpMethod = "GET")
+    @GetMapping("/search")
+    public CommonResult search(@ApiParam(name = "keywords", value = "商品id", required = false) String keywords,
+                                 @ApiParam(name = "sort", value = "评论等级", required = false) String sort,
+                                 @ApiParam(name = "page", value = "第几页", required = false) Integer page,
+                                 @ApiParam(name = "pageSize", value = "每页数量", required = false) Integer pageSize){
+
+        if(page == null){
+            page = 1;
+        }
+
+        if(pageSize == null){
+            pageSize = ITEM_PAGE_SIZE;
+        }
+
+        return CommonResult.success(itemService.getItemsByKeywords(keywords, sort, page, pageSize));
+    }
+
 }

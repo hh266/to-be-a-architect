@@ -143,6 +143,27 @@ public class ItemServiceImpl implements ItemService {
     }
 
     /**
+     * 根据关键词查找商品
+     *
+     * @param keywords
+     * @param sort
+     * @param page
+     * @param pageSize
+     * @return
+     */
+    @Override
+    public PagedGridResult getItemsByKeywords(String keywords, String sort, Integer page, Integer pageSize) {
+        Map<String,Object> map = new HashMap<>(2);
+        map.put("keywords",keywords);
+        map.put("sort",sort);
+
+        //原理：统一拦截SQL，为其提供分页功能
+        PageHelper.startPage(page, pageSize);
+
+        return getPageInfo(itemsMapperCustom.getItemsByKeywords(map), page);
+    }
+
+    /**
      * 获取分页结果
      *
      * @param list

@@ -7,4 +7,5 @@ package com.zch.controller;
 public class BaseController {
 
     public static final Integer COMMON_PAGE_SIZE = 10;
+    public static final Integer ITEM_PAGE_SIZE = 20;
 }
