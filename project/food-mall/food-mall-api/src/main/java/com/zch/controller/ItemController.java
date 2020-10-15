@@ -69,7 +69,8 @@ public class ItemController {
 
     @ApiOperation(value = "获取商品评论列表", notes = "获取商品列表", httpMethod = "GET")
     @GetMapping("/comments")
-    public CommonResult comments(String itemId, Integer level){
+    public CommonResult comments(@ApiParam(name = "itemId", value = "商品id", required = true) String itemId,
+                                 @ApiParam(name = "level", value = "评论等级", required = false) Integer level){
 
         if(StrUtil.isBlank(itemId)){
             CommonResult.validateFailed("商品id不能为空");

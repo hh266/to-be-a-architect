@@ -122,7 +122,7 @@ public class ItemServiceImpl implements ItemService {
     @Transactional(propagation = Propagation.SUPPORTS)
     @Override
     public List<ItemsCommentVO> getItemCommentList(String itemId, Integer level) {
-        Map map = new HashMap();
+        Map<String,Object> map = new HashMap<>(2);
         map.put("itemId",itemId);
         map.put("level",level);
         return itemsMapperCustom.getItemsCommonsList(map);
