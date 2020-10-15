@@ -1,5 +1,6 @@
 package com.zch.service;
 
+import com.zch.Utils.PagedGridResult;
 import com.zch.pojo.Items;
 import com.zch.pojo.ItemsImg;
 import com.zch.pojo.ItemsParam;
@@ -64,5 +65,5 @@ public interface ItemService {
      * @param level
      * @return
      */
-    public List<ItemsCommentVO> getItemCommentList(String itemId, Integer level);
+    public PagedGridResult getItemCommentList(String itemId, Integer level, Integer page, Integer pageSize);
 }

@@ -23,7 +23,7 @@ import org.springframework.web.bind.annotation.RestController;
 @Api(value = "商品详情", tags = {"用于获取商品相关的接口"})
 @RestController
 @RequestMapping("/items")
-public class ItemController {
+public class ItemController extends BaseController{
 
     @Autowired
     private ItemService itemService;
@@ -70,13 +70,23 @@ public class ItemController {
     @ApiOperation(value = "获取商品评论列表", notes = "获取商品列表", httpMethod = "GET")
     @GetMapping("/comments")
     public CommonResult comments(@ApiParam(name = "itemId", value = "商品id", required = true) String itemId,
-                                 @ApiParam(name = "level", value = "评论等级", required = false) Integer level){
+                                 @ApiParam(name = "level", value = "评论等级", required = false) Integer level,
+                                 @ApiParam(name = "page", value = "第几页", required = false) Integer page,
+                                 @ApiParam(name = "pageSize", value = "每页数量", required = false) Integer pageSize){
 
         if(StrUtil.isBlank(itemId)){
             CommonResult.validateFailed("商品id不能为空");
         }
 
-        return CommonResult.success(itemService.getItemCommentList(itemId, level));
+        if(page == null){
+            page = 1;
+        }
+
+        if(pageSize == null){
+            pageSize = COMMON_PAGE_SIZE;
+        }
+
+        return CommonResult.success(itemService.getItemCommentList(itemId, level, page, pageSize));
     }
 
 }

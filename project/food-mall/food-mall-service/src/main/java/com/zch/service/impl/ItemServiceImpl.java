@@ -1,5 +1,8 @@
 package com.zch.service.impl;
 
+import com.github.pagehelper.PageHelper;
+import com.github.pagehelper.PageInfo;
+import com.zch.Utils.PagedGridResult;
 import com.zch.mapper.*;
 import com.zch.pojo.*;
 import com.zch.pojo.vo.ItemsCommentVO;
@@ -121,10 +124,35 @@ public class ItemServiceImpl implements ItemService {
      */
     @Transactional(propagation = Propagation.SUPPORTS)
     @Override
-    public List<ItemsCommentVO> getItemCommentList(String itemId, Integer level) {
+    public PagedGridResult getItemCommentList(String itemId, Integer level, Integer page, Integer pageSize) {
         Map<String,Object> map = new HashMap<>(2);
         map.put("itemId",itemId);
         map.put("level",level);
-        return itemsMapperCustom.getItemsCommonsList(map);
+
+        //原理：统一拦截SQL，为其提供分页功能
+        PageHelper.startPage(page, pageSize);
+
+        List<ItemsCommentVO> list = itemsMapperCustom.getItemsCommonsList(map);
+
+        return getPageInfo(list, page);
     }
+
+    /**
+     * 获取分页结果
+     *
+     * @param list
+     * @param page
+     * @return
+     */
+    private PagedGridResult getPageInfo(List<?> list,Integer page){
+        PageInfo<?> pageList = new PageInfo<>(list);
+        PagedGridResult grid = new PagedGridResult();
+        grid.setPage(page);
+        grid.setRows(list);
+        grid.setTotal(pageList.getPages());
+        grid.setRecords(pageList.getTotal());
+        return grid;
+    }
+
+
 }

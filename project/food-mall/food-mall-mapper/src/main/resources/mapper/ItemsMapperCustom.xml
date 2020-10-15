@@ -25,7 +25,5 @@
         <if test="paramsMap.level != null and paramsMap.level != ''">
             AND items_comments.comment_level = #{paramsMap.level}
         </if>
-        ORDER BY
-            items_comments.created_time DESC;
     </select>
 </mapper>
