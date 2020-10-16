@@ -164,6 +164,27 @@ public class ItemServiceImpl implements ItemService {
     }
 
     /**
+     * 根据三级分类查找商品
+     *
+     * @param catId
+     * @param sort
+     * @param page
+     * @param pageSize
+     * @return
+     */
+    @Override
+    public PagedGridResult getItemsByThirdCat(Integer catId, String sort, Integer page, Integer pageSize) {
+        Map<String,Object> map = new HashMap<>(2);
+        map.put("catId",catId);
+        map.put("sort",sort);
+
+        //原理：统一拦截SQL，为其提供分页功能
+        PageHelper.startPage(page, pageSize);
+
+        return getPageInfo(itemsMapperCustom.getItemsByThirdCat(map), page);
+    }
+
+    /**
      * 获取分页结果
      *
      * @param list

@@ -107,4 +107,26 @@ public class ItemController extends BaseController{
         return CommonResult.success(itemService.getItemsByKeywords(keywords, sort, page, pageSize));
     }
 
+    @ApiOperation(value = "分类商品", notes = "三级分类商品列表", httpMethod = "GET")
+    @GetMapping("/catItems")
+    public CommonResult catItems(@ApiParam(name = "catId", value = "商品id", required = true) Integer catId,
+                               @ApiParam(name = "sort", value = "评论等级", required = false) String sort,
+                               @ApiParam(name = "page", value = "第几页", required = false) Integer page,
+                               @ApiParam(name = "pageSize", value = "每页数量", required = false) Integer pageSize){
+
+        if(catId == null){
+            CommonResult.validateFailed();
+        }
+
+        if(page == null){
+            page = 1;
+        }
+
+        if(pageSize == null){
+            pageSize = ITEM_PAGE_SIZE;
+        }
+
+        return CommonResult.success(itemService.getItemsByThirdCat(catId, sort, page, pageSize));
+    }
+
 }

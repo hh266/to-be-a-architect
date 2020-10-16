@@ -41,19 +41,45 @@
             </if>
         ORDER BY
         <choose>
-            <when test="paramsMap.sort = &quot;c&quot; ">
+            <when test="paramsMap.sort == &quot;c&quot; ">
                 it.sell_counts DESC
             </when>
-            <when test="paramsMap.sort = &quot;p&quot; ">
+            <when test="paramsMap.sort == &quot;p&quot; ">
                 ip.price ASC
             </when>
             <otherwise>
                 it.item_name DESC
             </otherwise>
         </choose>
-     
+    </select>
 
-
-
+    <select id="getItemsByThirdCat" parameterType="Map" resultType="com.zch.pojo.vo.SearchItemVO">
+        SELECT
+        it.id AS itemId,
+        it.item_name AS itemName,
+        it.sell_counts AS sellCounts,
+        ii.url AS imgUrl,
+        ip.price
+        FROM
+        items AS it
+        LEFT JOIN items_img ii ON ii.item_id = it.id
+        LEFT JOIN ( SELECT item_id, MIN( price_discount ) AS price FROM items_spec GROUP BY item_id ) ip ON ip.item_id = it.id
+        WHERE
+        ii.is_main = 1
+        <if test="paramsMap.catId != null and paramsMap.catId != ''">
+            AND it.cat_id = #{paramsMap.catId}
+        </if>
+        ORDER BY
+        <choose>
+            <when test="paramsMap.sort == &quot;c&quot; ">
+                it.sell_counts DESC
+            </when>
+            <when test="paramsMap.sort == &quot;p&quot; ">
+                ip.price ASC
+            </when>
+            <otherwise>
+                it.item_name DESC
+            </otherwise>
+        </choose>
     </select>
 </mapper>
