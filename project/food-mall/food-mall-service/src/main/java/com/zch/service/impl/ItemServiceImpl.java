@@ -7,6 +7,7 @@ import com.zch.Utils.PagedGridResult;
 import com.zch.mapper.*;
 import com.zch.pojo.*;
 import com.zch.pojo.vo.ItemsCommentVO;
+import com.zch.pojo.vo.ShopcartVO;
 import com.zch.service.ItemService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -14,9 +15,7 @@ import org.springframework.transaction.annotation.Propagation;
 import org.springframework.transaction.annotation.Transactional;
 import tk.mybatis.mapper.entity.Example;
 
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 
 /**
  * @description:
@@ -63,7 +62,7 @@ public class ItemServiceImpl implements ItemService {
     public List<ItemsImg> getItemImages(String itemId) {
         Example example = new Example(ItemsImg.class);
         Example.Criteria criteria = example.createCriteria();
-        criteria.andEqualTo("itemId",itemId);
+        criteria.andEqualTo("itemId", itemId);
 
         return itemsImgMapper.selectByExample(example);
     }
@@ -79,7 +78,7 @@ public class ItemServiceImpl implements ItemService {
     public List<ItemsSpec> getItemItemsSpecs(String itemId) {
         Example example = new Example(ItemsSpec.class);
         Example.Criteria criteria = example.createCriteria();
-        criteria.andEqualTo("itemId",itemId);
+        criteria.andEqualTo("itemId", itemId);
 
         return itemsSpecMapper.selectByExample(example);
     }
@@ -95,7 +94,7 @@ public class ItemServiceImpl implements ItemService {
     public ItemsParam getItemParam(String itemId) {
         Example example = new Example(ItemsParam.class);
         Example.Criteria criteria = example.createCriteria();
-        criteria.andEqualTo("itemId",itemId);
+        criteria.andEqualTo("itemId", itemId);
 
         return itemsParamMapper.selectOneByExample(example);
     }
@@ -126,17 +125,17 @@ public class ItemServiceImpl implements ItemService {
     @Transactional(propagation = Propagation.SUPPORTS)
     @Override
     public PagedGridResult getItemCommentList(String itemId, Integer level, Integer page, Integer pageSize) {
-        Map<String,Object> map = new HashMap<>(2);
-        map.put("itemId",itemId);
-        map.put("level",level);
+        Map<String, Object> map = new HashMap<>(2);
+        map.put("itemId", itemId);
+        map.put("level", level);
 
         //原理：统一拦截SQL，为其提供分页功能
         PageHelper.startPage(page, pageSize);
 
         List<ItemsCommentVO> list = itemsMapperCustom.getItemsCommonsList(map);
 
-        for (ItemsCommentVO vo: list) {
-                vo.setNickname(DesensitizationUtil.commonDisplay(vo.getNickname()));
+        for (ItemsCommentVO vo : list) {
+            vo.setNickname(DesensitizationUtil.commonDisplay(vo.getNickname()));
         }
 
         return getPageInfo(list, page);
@@ -151,11 +150,12 @@ public class ItemServiceImpl implements ItemService {
      * @param pageSize
      * @return
      */
+    @Transactional(propagation = Propagation.SUPPORTS)
     @Override
     public PagedGridResult getItemsByKeywords(String keywords, String sort, Integer page, Integer pageSize) {
-        Map<String,Object> map = new HashMap<>(2);
-        map.put("keywords",keywords);
-        map.put("sort",sort);
+        Map<String, Object> map = new HashMap<>(2);
+        map.put("keywords", keywords);
+        map.put("sort", sort);
 
         //原理：统一拦截SQL，为其提供分页功能
         PageHelper.startPage(page, pageSize);
@@ -172,16 +172,33 @@ public class ItemServiceImpl implements ItemService {
      * @param pageSize
      * @return
      */
+    @Transactional(propagation = Propagation.SUPPORTS)
     @Override
     public PagedGridResult getItemsByThirdCat(Integer catId, String sort, Integer page, Integer pageSize) {
-        Map<String,Object> map = new HashMap<>(2);
-        map.put("catId",catId);
-        map.put("sort",sort);
+        Map<String, Object> map = new HashMap<>(2);
+        map.put("catId", catId);
+        map.put("sort", sort);
 
         //原理：统一拦截SQL，为其提供分页功能
         PageHelper.startPage(page, pageSize);
 
         return getPageInfo(itemsMapperCustom.getItemsByThirdCat(map), page);
+    }
+
+    /**
+     * 过规格ids 查询购物车中的商品
+     *
+     * @param specIds
+     * @return
+     */
+    @Transactional(propagation = Propagation.SUPPORTS)
+    @Override
+    public List<ShopcartVO> queryItemsBySpecIds(String specIds) {
+        String[] ids = specIds.split(",");
+        List<String> specIdsList = new ArrayList<>();
+        Collections.addAll(specIdsList, ids);
+
+        return itemsMapperCustom.queryItemsBySpecIds(specIdsList);
     }
 
     /**
@@ -191,7 +208,7 @@ public class ItemServiceImpl implements ItemService {
      * @param page
      * @return
      */
-    private PagedGridResult getPageInfo(List<?> list,Integer page){
+    private PagedGridResult getPageInfo(List<?> list, Integer page) {
         PageInfo<?> pageList = new PageInfo<>(list);
         PagedGridResult grid = new PagedGridResult();
         grid.setPage(page);
@@ -200,6 +217,4 @@ public class ItemServiceImpl implements ItemService {
         grid.setRecords(pageList.getTotal());
         return grid;
     }
-
-
 }

@@ -3,6 +3,7 @@ package com.zch.mapper;
 
 import com.zch.pojo.vo.ItemsCommentVO;
 import com.zch.pojo.vo.SearchItemVO;
+import com.zch.pojo.vo.ShopcartVO;
 import org.apache.ibatis.annotations.Param;
 
 import java.util.List;
@@ -36,4 +37,13 @@ public interface ItemsMapperCustom {
      * @return
      */
     public List<SearchItemVO> getItemsByThirdCat(@Param("paramsMap") Map<String, Object> map);
+
+
+    /**
+     * 通过规格ids 查询购物车中的商品
+     *
+     * @param specIdsList
+     * @return
+     */
+    public List<ShopcartVO> queryItemsBySpecIds(@Param("paramsList") List specIdsList);
 }

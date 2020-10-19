@@ -10,10 +10,7 @@ import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import io.swagger.annotations.ApiParam;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 /**
  * @description: 商品详情页
@@ -127,6 +124,18 @@ public class ItemController extends BaseController{
         }
 
         return CommonResult.success(itemService.getItemsByThirdCat(catId, sort, page, pageSize));
+    }
+
+    @ApiOperation(value = "通过规格 Ids 获取商品信息", notes = "通过规格 Ids 获取最新的商品信息", httpMethod = "GET")
+    @GetMapping("/refresh")
+    public CommonResult refresh(@ApiParam(name = "商品规格 Ids", value = "商品规格 Ids", required = true, example = "1001,1002,1005")
+                                    @RequestParam String itemSpecIds){
+
+        if(StrUtil.isBlank(itemSpecIds)){
+            return CommonResult.success();
+        }
+
+        return CommonResult.success(itemService.queryItemsBySpecIds(itemSpecIds));
     }
 
 }
