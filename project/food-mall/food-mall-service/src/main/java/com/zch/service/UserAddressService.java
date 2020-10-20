@@ -1,5 +1,6 @@
 package com.zch.service;
 
+import com.zch.pojo.UserAddress;
 import com.zch.pojo.bo.UserAddressBO;
 import com.zch.pojo.vo.UserAddressVO;
 
@@ -54,4 +55,12 @@ public interface UserAddressService {
      * @return
      */
     public Boolean setDefaultUserAddress(String userId, String userAddressId);
+
+    /**
+     * 通过 userAddressId 查找用户id
+     *
+     * @param userAddressId
+     * @return
+     */
+    public UserAddress getUserAddressById(String userAddressId);
 }

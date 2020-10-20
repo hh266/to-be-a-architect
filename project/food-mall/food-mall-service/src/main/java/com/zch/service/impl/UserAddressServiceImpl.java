@@ -86,6 +86,7 @@ public class UserAddressServiceImpl implements UserAddressService {
      * @param UserAddressBO
      * @return
      */
+    @Transactional(propagation = Propagation.REQUIRED, rollbackFor = {})
     @Override
     public Boolean updateUserAddress(String userAddressId, UserAddressBO UserAddressBO) {
         UserAddress userAddress = BeanUtil.copyProperties(UserAddressBO, UserAddress.class);
@@ -102,6 +103,7 @@ public class UserAddressServiceImpl implements UserAddressService {
      * @param userAddressId
      * @return
      */
+    @Transactional(propagation = Propagation.REQUIRED, rollbackFor = {})
     @Override
     public Boolean deleteUserAddress(String userId, String userAddressId) {
         UserAddress userAddress = new UserAddress();
@@ -117,6 +119,7 @@ public class UserAddressServiceImpl implements UserAddressService {
      * @param userAddressId
      * @return
      */
+    @Transactional(propagation = Propagation.REQUIRED, rollbackFor = {})
     @Override
     public Boolean setDefaultUserAddress(String userId, String userAddressId) {
         //把该用户的默认地址设置为非默认
@@ -138,6 +141,20 @@ public class UserAddressServiceImpl implements UserAddressService {
         address.setUpdatedTime(new Date());
 
         return 1 == userAddressMapper.updateByPrimaryKeySelective(address);
+    }
+
+    /**
+     * 通过 userAddressId 查找用户id
+     *
+     * @param userAddressId
+     * @return
+     */
+    @Transactional(propagation = Propagation.SUPPORTS, rollbackFor = {})
+    @Override
+    public UserAddress getUserAddressById(String userAddressId) {
+        UserAddress userAddress = new UserAddress();
+        userAddress.setId(userAddressId);
+        return userAddressMapper.selectByPrimaryKey(userAddress);
     }
 
 }
