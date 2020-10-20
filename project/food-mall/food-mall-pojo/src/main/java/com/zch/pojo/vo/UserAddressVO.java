@@ -10,7 +10,7 @@ public class UserAddressVO {
     private String id;
     private String receiver;
     private String mobile;
-    private String prov;
+    private String province;
     private String city;
     private String district;
     private String detail;
@@ -49,11 +49,11 @@ public class UserAddressVO {
     }
 
     public String getProv() {
-        return prov;
+        return province;
     }
 
-    public void setProv(String prov) {
-        this.prov = prov;
+    public void setProv(String province) {
+        this.province = province;
     }
 
     public String getCity() {

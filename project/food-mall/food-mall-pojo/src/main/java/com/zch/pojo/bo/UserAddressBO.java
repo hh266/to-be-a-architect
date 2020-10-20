@@ -25,7 +25,7 @@ public class UserAddressBO {
 
     @NotEmpty
     @ApiModelProperty(value = "省份", notes = "收件人省份", required = true)
-    private String prov;
+    private String province;
 
     @NotEmpty
     @ApiModelProperty(value = "城市", notes = "收件人城市", required = true)
@@ -63,12 +63,12 @@ public class UserAddressBO {
         this.mobile = mobile;
     }
 
-    public String getProv() {
-        return prov;
+    public String getProvince() {
+        return province;
     }
 
-    public void setProv(String prov) {
-        this.prov = prov;
+    public void setProvince(String province) {
+        this.province = province;
     }
 
     public String getCity() {

@@ -40,16 +40,18 @@ public interface UserAddressService {
     /**
      * 删除用户地址
      *
+     * @param userId
      * @param userAddressId
      * @return
      */
-    public Boolean deleteUserAddress(String userAddressId);
+    public Boolean deleteUserAddress(String userId, String userAddressId);
 
     /**
      * 设置用户的默认地址
      *
+     * @param userId
      * @param userAddressId
      * @return
      */
-    public Boolean setDefaultUserAddress(String userAddressId);
+    public Boolean setDefaultUserAddress(String userId, String userAddressId);
 }
