@@ -55,7 +55,7 @@ public class OrderServiceImpl implements OrderService {
      * @return
      */
     @Override
-    public int create(SubmitOrderBO submitOrderBO) {
+    public String create(SubmitOrderBO submitOrderBO) {
         String userId = submitOrderBO.getUserId();
         String itemSpecIds = submitOrderBO.getItemSpecIds();
         String addressId = submitOrderBO.getAddressId();
@@ -124,6 +124,6 @@ public class OrderServiceImpl implements OrderService {
         orderStatus.setCreatedTime(new Date());
 
         orderStatusMapper.insert(orderStatus);
-        return 0;
+        return orderId;
     }
 }
