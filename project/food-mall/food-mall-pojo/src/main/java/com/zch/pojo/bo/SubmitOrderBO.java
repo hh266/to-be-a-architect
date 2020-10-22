@@ -23,11 +23,9 @@ public class SubmitOrderBO {
     @ApiModelProperty(value = "用户地址Id", notes = "用户地址Id", required = true)
     private String addressId;
 
-    @NotEmpty
     @ApiModelProperty(value = "支付方式", notes = "支付方式", required = true)
     private Integer payMethod;
 
-    @NotEmpty
     @ApiModelProperty(value = "买家留言", notes = "买家留言", required = true)
     private String leftMsg;
 

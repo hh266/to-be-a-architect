@@ -1,10 +1,17 @@
 package com.zch.service.impl;
 
+import com.zch.enums.OrderStatusEnum;
 import com.zch.enums.YseOrNo;
+import com.zch.mapper.OrderItemsMapper;
+import com.zch.mapper.OrderStatusMapper;
 import com.zch.mapper.OrdersMapper;
+import com.zch.pojo.OrderItems;
+import com.zch.pojo.OrderStatus;
 import com.zch.pojo.Orders;
 import com.zch.pojo.UserAddress;
 import com.zch.pojo.bo.SubmitOrderBO;
+import com.zch.pojo.vo.ShopcartVO;
+import com.zch.service.ItemService;
 import com.zch.service.OrderService;
 import com.zch.service.UserAddressService;
 import org.n3r.idworker.Sid;
@@ -12,6 +19,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.Date;
+import java.util.List;
 
 /**
  * @description:
@@ -25,10 +33,19 @@ public class OrderServiceImpl implements OrderService {
     private OrdersMapper ordersMapper;
 
     @Autowired
+    private OrderItemsMapper orderItemsMapper;
+
+    @Autowired
+    private OrderStatusMapper orderStatusMapper;
+
+    @Autowired
     private Sid sid;
 
     @Autowired
     private UserAddressService userAddressService;
+
+    @Autowired
+    private ItemService itemService;
 
 
     /**
@@ -41,7 +58,7 @@ public class OrderServiceImpl implements OrderService {
     public int create(SubmitOrderBO submitOrderBO) {
         String userId = submitOrderBO.getUserId();
         String itemSpecIds = submitOrderBO.getItemSpecIds();
-        String addressId = submitOrderBO.getUserId();
+        String addressId = submitOrderBO.getAddressId();
         String leftMsg = submitOrderBO.getLeftMsg();
         Integer payMethod = submitOrderBO.getPayMethod();
 
@@ -51,7 +68,8 @@ public class OrderServiceImpl implements OrderService {
 
         // 1. 新订单数据保存
         Orders orders = new Orders();
-        orders.setId(sid.nextShort());
+        String orderId = sid.nextShort();
+        orders.setId(orderId);
         orders.setUserId(userId);
         //查询地址内容
         UserAddress userAddress = userAddressService.getUserAddressById(addressId);
@@ -62,8 +80,6 @@ public class OrderServiceImpl implements OrderService {
                 userAddress.getDistrict() + " " +
                 userAddress.getDetail());
         orders.setPostAmount(postAmount);
-        //orders.setTotalAmount();
-        //orders.setPayMethod();
         orders.setPayMethod(payMethod);
         orders.setLeftMsg(leftMsg);
         orders.setIsComment(YseOrNo.NO.type);
@@ -71,11 +87,43 @@ public class OrderServiceImpl implements OrderService {
         orders.setCreatedTime(new Date());
         orders.setUpdatedTime(new Date());
 
-        // 2. 根据循环userId 保存订单商品
+        // 2. 获取购物车中商品信息 保存订单商品
+        List<ShopcartVO> itemList = itemService.queryItemsBySpecIds(itemSpecIds);
+        // 统计所有商品的价格之和
+        Integer totalAmount = 0, realPayAmount = 0;
+        for (ShopcartVO item : itemList) {
+            // TODO 整合redis后 购物车的数量从 redis 中获取
+            Integer buyCounts = 1;
+            totalAmount += item.getPriceNormal() * buyCounts;
+            realPayAmount += item.getPriceDiscount() * buyCounts;
+            // 保存订单商品
+            OrderItems subOrderItems = new OrderItems();
+            subOrderItems.setId(sid.nextShort());
+            subOrderItems.setOrderId(orderId);
+            subOrderItems.setItemId(item.getItemId());
+            subOrderItems.setItemImg(item.getItemImgUrl());
+            subOrderItems.setItemName(item.getItemName());
+            subOrderItems.setItemSpecId(item.getSpecId());
+            subOrderItems.setItemSpecName(item.getItemName());
+            subOrderItems.setPrice(item.getPriceDiscount());
+            subOrderItems.setBuyCounts(buyCounts);
+            orderItemsMapper.insert(subOrderItems);
 
+            //扣除库存
+            itemService.decreaseItemSpecStock(item.getSpecId(), buyCounts);
+        }
 
-        // 3.
+        orders.setTotalAmount(totalAmount);
+        orders.setRealPayAmount(realPayAmount);
+        ordersMapper.insert(orders);
 
+        // 3. 保存订单状态
+        OrderStatus orderStatus = new OrderStatus();
+        orderStatus.setOrderId(orderId);
+        orderStatus.setOrderStatus(OrderStatusEnum.WAIT_PAY.type);
+        orderStatus.setCreatedTime(new Date());
+
+        orderStatusMapper.insert(orderStatus);
         return 0;
     }
 }

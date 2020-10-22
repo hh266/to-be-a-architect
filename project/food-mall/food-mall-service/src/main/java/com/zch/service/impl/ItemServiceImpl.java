@@ -202,6 +202,22 @@ public class ItemServiceImpl implements ItemService {
     }
 
     /**
+     * 减少商品库存
+     *
+     * @param specId
+     * @param buyCounts
+     * @return
+     */
+    @Transactional(propagation = Propagation.REQUIRED, rollbackFor = {})
+    @Override
+    public void decreaseItemSpecStock(String specId, Integer buyCounts) {
+        int result = itemsMapperCustom.decreaseItemSpecStock(specId, buyCounts);
+        if(result != 1){
+            throw new RuntimeException("库存不足，订单创建失败");
+        }
+    }
+
+    /**
      * 获取分页结果
      *
      * @param list
@@ -217,4 +233,5 @@ public class ItemServiceImpl implements ItemService {
         grid.setRecords(pageList.getTotal());
         return grid;
     }
+
 }

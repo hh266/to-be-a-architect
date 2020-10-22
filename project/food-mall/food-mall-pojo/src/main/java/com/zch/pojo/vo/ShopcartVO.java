@@ -12,8 +12,8 @@ public class ShopcartVO {
     private String itemName;
     private String specId;
     private String specName;
-    private String priceDiscount;
-    private String priceNormal;
+    private Integer priceDiscount;
+    private Integer priceNormal;
 
     public String getItemId() {
         return itemId;
@@ -55,19 +55,19 @@ public class ShopcartVO {
         this.specName = specName;
     }
 
-    public String getPriceDiscount() {
+    public Integer getPriceDiscount() {
         return priceDiscount;
     }
 
-    public void setPriceDiscount(String priceDiscount) {
+    public void setPriceDiscount(Integer priceDiscount) {
         this.priceDiscount = priceDiscount;
     }
 
-    public String getPriceNormal() {
+    public Integer getPriceNormal() {
         return priceNormal;
     }
 
-    public void setPriceNormal(String priceNormal) {
+    public void setPriceNormal(Integer priceNormal) {
         this.priceNormal = priceNormal;
     }
 }

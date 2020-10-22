@@ -152,9 +152,7 @@ public class UserAddressServiceImpl implements UserAddressService {
     @Transactional(propagation = Propagation.SUPPORTS, rollbackFor = {})
     @Override
     public UserAddress getUserAddressById(String userAddressId) {
-        UserAddress userAddress = new UserAddress();
-        userAddress.setId(userAddressId);
-        return userAddressMapper.selectByPrimaryKey(userAddress);
+        return userAddressMapper.selectByPrimaryKey(userAddressId);
     }
 
 }

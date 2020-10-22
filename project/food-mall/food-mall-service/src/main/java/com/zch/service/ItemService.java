@@ -99,4 +99,13 @@ public interface ItemService {
      * @return
      */
     public List<ShopcartVO> queryItemsBySpecIds(String specIds);
+
+    /**
+     * 减少商品库存
+     *
+     * @param specId
+     * @param buyCounts
+     * @return
+     */
+    public void decreaseItemSpecStock(String specId, Integer buyCounts);
 }

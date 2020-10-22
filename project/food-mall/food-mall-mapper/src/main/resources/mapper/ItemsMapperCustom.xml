@@ -110,4 +110,13 @@
             #{specId}
         </foreach>
     </select>
+
+    <update id="decreaseItemSpecStock"  parameterType="Map">
+        UPDATE items_spec
+        SET stock = stock - #{buyCounts}
+        WHERE
+            id = #{specId}
+            AND
+            stock >= #{buyCounts}
+    </update>
 </mapper>

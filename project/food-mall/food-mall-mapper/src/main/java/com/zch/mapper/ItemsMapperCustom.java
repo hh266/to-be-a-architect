@@ -46,4 +46,16 @@ public interface ItemsMapperCustom {
      * @return
      */
     public List<ShopcartVO> queryItemsBySpecIds(@Param("paramsList") List specIdsList);
+
+
+    /**
+     * 减少库存
+     *
+     * @param specId
+     * @param buyCounts
+     * @return
+     */
+    public Integer decreaseItemSpecStock(@Param("specId") String specId,
+            @Param("buyCounts") Integer buyCounts);
+
 }
