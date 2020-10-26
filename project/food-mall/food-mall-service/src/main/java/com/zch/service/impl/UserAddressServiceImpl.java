@@ -70,7 +70,7 @@ public class UserAddressServiceImpl implements UserAddressService {
 
         //查找该用户是否已有地址，如果没有设置改地址为默认地址
         List<UserAddressVO> userAddressVOList = findAllUserAddressByUserId(userAddress.getUserId());
-        if (userAddressVOList == null) {
+        if (userAddressVOList.size() == 0) {
             userAddress.setIsDefault(YseOrNo.YES.type);
         } else {
             userAddress.setIsDefault(YseOrNo.NO.type);
