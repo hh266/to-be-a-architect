@@ -16,4 +16,12 @@ public interface OrderService {
      * @return
      */
     public String create(SubmitOrderBO submitOrderBO);
+
+
+    /**
+     * 关闭已超时但未支付的订单
+     *
+     * @return
+     */
+    public int closeOvertimeOrders();
 }

@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.zch.mapper.OrderMapperCustom">
+
+    <update id="closeOvertimeOrder">
+        UPDATE order_status
+		SET order_status = 50,
+		close_time = NOW()
+		WHERE
+			order_status = 10
+			AND TIMESTAMPDIFF(
+				SECOND,
+			created_time,
+			NOW()) > 86400;
+    </update>
+</mapper>

@@ -3,6 +3,7 @@ package com.zch.service.impl;
 import com.zch.enums.OrderStatusEnum;
 import com.zch.enums.YseOrNo;
 import com.zch.mapper.OrderItemsMapper;
+import com.zch.mapper.OrderMapperCustom;
 import com.zch.mapper.OrderStatusMapper;
 import com.zch.mapper.OrdersMapper;
 import com.zch.pojo.OrderItems;
@@ -37,6 +38,9 @@ public class OrderServiceImpl implements OrderService {
 
     @Autowired
     private OrderStatusMapper orderStatusMapper;
+
+    @Autowired
+    private OrderMapperCustom orderMapperCustom;
 
     @Autowired
     private Sid sid;
@@ -125,5 +129,13 @@ public class OrderServiceImpl implements OrderService {
 
         orderStatusMapper.insert(orderStatus);
         return orderId;
+    }
+
+    /**
+     * 关闭已超时但未支付的订单
+     */
+    @Override
+    public int closeOvertimeOrders() {
+       return orderMapperCustom.closeOvertimeOrder();
     }
 }
