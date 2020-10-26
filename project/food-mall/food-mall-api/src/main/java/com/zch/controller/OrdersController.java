@@ -2,12 +2,14 @@ package com.zch.controller;
 
 import com.zch.Utils.CookieUtils;
 import com.zch.Utils.JsonUtils;
+import com.zch.enums.OrderStatusEnum;
 import com.zch.pojo.bo.SubmitOrderBO;
 import com.zch.result.CommonResult;
 import com.zch.service.OrderService;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
 import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -39,7 +41,7 @@ public class OrdersController extends BaseController {
         String orderId = service.create(submitOrderBO);
 
         // 2. 移除购物车中的订单
-        // TODO 移除 redis 中购物车的数据
+        // TODO 移除 redis 中购物车的数据，并且同步到 前端 Cookie
         // 移除cookie中的数据
         // CookieUtils.setCookie(request, response, FOODIE_SHOPCART,  "", true);
 
@@ -50,4 +52,13 @@ public class OrdersController extends BaseController {
 
         return CommonResult.success(orderId,"ok");
     }
+
+    @PostMapping("/notifyMerchantOrderPaid")
+    public Integer notifyMerchantOrderPaid(String merchantOrderId){
+
+        service.updateOrderStatus(merchantOrderId, OrderStatusEnum.WAIT_DELIVER.type);
+
+        return HttpStatus.OK.value();
+    }
+
 }

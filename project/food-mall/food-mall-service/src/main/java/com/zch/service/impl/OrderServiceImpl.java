@@ -18,6 +18,8 @@ import com.zch.service.UserAddressService;
 import org.n3r.idworker.Sid;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Propagation;
+import org.springframework.transaction.annotation.Transactional;
 
 import java.util.Date;
 import java.util.List;
@@ -137,5 +139,23 @@ public class OrderServiceImpl implements OrderService {
     @Override
     public int closeOvertimeOrders() {
        return orderMapperCustom.closeOvertimeOrder();
+    }
+
+    /**
+     * 修改订单状态
+     *
+     * @param orderId
+     * @param orderStatus
+     * @return
+     */
+    @Transactional(propagation = Propagation.REQUIRED, rollbackFor = {})
+    @Override
+    public int updateOrderStatus(String orderId, Integer orderStatus) {
+        OrderStatus order = new OrderStatus();
+        order.setOrderId(orderId);
+        order.setOrderStatus(orderStatus);
+        order.setPayTime(new Date());
+
+        return orderStatusMapper.updateByPrimaryKeySelective(order);
     }
 }

@@ -19,6 +19,15 @@ public interface OrderService {
 
 
     /**
+     * 修改订单状态
+     *
+     * @param orderId
+     * @param orderStatus
+     * @return
+     */
+    public int updateOrderStatus(String orderId, Integer orderStatus);
+
+    /**
      * 关闭已超时但未支付的订单
      *
      * @return
