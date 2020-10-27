@@ -4,6 +4,8 @@ import com.zch.Utils.CookieUtils;
 import com.zch.Utils.JsonUtils;
 import com.zch.enums.OrderStatusEnum;
 import com.zch.pojo.bo.SubmitOrderBO;
+import com.zch.pojo.vo.MerchantOrdersVO;
+import com.zch.pojo.vo.OrderVO;
 import com.zch.result.CommonResult;
 import com.zch.service.OrderService;
 import io.swagger.annotations.Api;
@@ -38,7 +40,9 @@ public class OrdersController extends BaseController {
                                HttpServletRequest request,
                                HttpServletResponse response){
         // 1. 创建购物车
-        String orderId = service.create(submitOrderBO);
+        OrderVO orderVO = service.create(submitOrderBO);
+        String orderId = orderVO.getOrderId();
+        MerchantOrdersVO merchantOrdersVO = orderVO.getMerchantOrdersVO();
 
         // 2. 移除购物车中的订单
         // TODO 移除 redis 中购物车的数据，并且同步到 前端 Cookie
@@ -47,7 +51,7 @@ public class OrdersController extends BaseController {
 
 
         // 3.向购物中心发送当前订单，用于保存支付中心的订单数据
-
+        merchantOrdersVO.setReturnUrl(payReturnUrl);
 
 
         return CommonResult.success(orderId,"ok");

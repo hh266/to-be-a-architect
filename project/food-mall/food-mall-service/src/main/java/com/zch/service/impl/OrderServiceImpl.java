@@ -11,6 +11,8 @@ import com.zch.pojo.OrderStatus;
 import com.zch.pojo.Orders;
 import com.zch.pojo.UserAddress;
 import com.zch.pojo.bo.SubmitOrderBO;
+import com.zch.pojo.vo.MerchantOrdersVO;
+import com.zch.pojo.vo.OrderVO;
 import com.zch.pojo.vo.ShopcartVO;
 import com.zch.service.ItemService;
 import com.zch.service.OrderService;
@@ -61,7 +63,7 @@ public class OrderServiceImpl implements OrderService {
      * @return
      */
     @Override
-    public String create(SubmitOrderBO submitOrderBO) {
+    public OrderVO create(SubmitOrderBO submitOrderBO) {
         String userId = submitOrderBO.getUserId();
         String itemSpecIds = submitOrderBO.getItemSpecIds();
         String addressId = submitOrderBO.getAddressId();
@@ -70,7 +72,6 @@ public class OrderServiceImpl implements OrderService {
 
         //包邮费设置为0
         Integer postAmount = 0;
-
 
         // 1. 新订单数据保存
         Orders orders = new Orders();
@@ -129,8 +130,19 @@ public class OrderServiceImpl implements OrderService {
         orderStatus.setOrderStatus(OrderStatusEnum.WAIT_PAY.type);
         orderStatus.setCreatedTime(new Date());
 
+        // 4. 构建商户订单，用于传给支付中心
+        MerchantOrdersVO merchantOrdersVO = new MerchantOrdersVO();
+        merchantOrdersVO.setMerchantOrderId(orderId);
+        merchantOrdersVO.setMerchantUserId(userId);
+        merchantOrdersVO.setPayMethod(payMethod);
+        merchantOrdersVO.setAmount(realPayAmount + postAmount);
+
+        OrderVO orderVO = new OrderVO();
+        orderVO.setMerchantOrdersVO(merchantOrdersVO);
+        orderVO.setOrderId(orderId);
+
         orderStatusMapper.insert(orderStatus);
-        return orderId;
+        return orderVO;
     }
 
     /**

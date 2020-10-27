@@ -22,7 +22,7 @@ public class OrderJob {
     /**
      * 自动关闭订单
      */
-    @Scheduled(cron = "0/3 * * * * ?")
+    //@Scheduled(cron = "0/3 * * * * ?")
     public void autoCloseOrder(){
         System.out.println("执行定时任务，当前时间为："+ DateUtil.now());
         System.out.println("关闭订单数："+ orderService.closeOvertimeOrders());

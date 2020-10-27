@@ -1,6 +1,7 @@
 package com.zch.service;
 
 import com.zch.pojo.bo.SubmitOrderBO;
+import com.zch.pojo.vo.OrderVO;
 
 /**
  * @description: 订单 order service
@@ -15,7 +16,7 @@ public interface OrderService {
      * @param submitOrderBO
      * @return
      */
-    public String create(SubmitOrderBO submitOrderBO);
+    public OrderVO create(SubmitOrderBO submitOrderBO);
 
 
     /**
