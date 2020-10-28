@@ -1,11 +1,10 @@
 package com.zch.service;
 
-import com.zch.Utils.PagedGridResult;
+import com.zch.utils.PagedGridResult;
 import com.zch.pojo.Items;
 import com.zch.pojo.ItemsImg;
 import com.zch.pojo.ItemsParam;
 import com.zch.pojo.ItemsSpec;
-import com.zch.pojo.vo.ItemsCommentVO;
 import com.zch.pojo.vo.ShopcartVO;
 
 import java.util.List;

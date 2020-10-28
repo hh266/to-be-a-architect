@@ -42,7 +42,7 @@ public class ServiceLogAspect {
      * @return
      * @throws Throwable
      */
-    @Around("execution(* com.zch.service.impl..*.*(..))")
+    //@Around("execution(* com.zch.service.impl..*.*(..))")
     public Object recordTimeLog(ProceedingJoinPoint joinPoint) throws Throwable{
 
         //{} 表示占位符

@@ -1,9 +1,8 @@
 package com.zch.controller;
 
 import cn.hutool.core.util.StrUtil;
-import cn.hutool.json.JSONUtil;
-import com.zch.Utils.CookieUtils;
-import com.zch.Utils.JsonUtils;
+import com.zch.utils.CookieUtils;
+import com.zch.utils.JsonUtils;
 import com.zch.pojo.Users;
 import com.zch.pojo.bo.UserRegistBO;
 import com.zch.result.CommonResult;

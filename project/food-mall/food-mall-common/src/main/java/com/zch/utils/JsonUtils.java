@@ -1,4 +1,4 @@
-package com.zch.Utils;
+package com.zch.utils;
 
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.JavaType;

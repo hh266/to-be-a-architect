@@ -1,4 +1,4 @@
-package com.zch.Utils;
+package com.zch.utils;
 
 /**
  * 通用脱敏工具类
