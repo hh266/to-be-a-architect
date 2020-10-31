@@ -1,5 +1,6 @@
 package com.zch.service;
 
+import com.zch.pojo.OrderStatus;
 import com.zch.pojo.bo.SubmitOrderBO;
 import com.zch.pojo.vo.OrderVO;
 
@@ -34,4 +35,12 @@ public interface OrderService {
      * @return
      */
     public int closeOvertimeOrders();
+
+    /**
+     * 查询订单信息
+     *
+     * @param orderId
+     * @return
+     */
+    public OrderStatus queryOrderStatusInfo(String orderId);
 }

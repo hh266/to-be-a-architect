@@ -82,12 +82,19 @@ public class OrdersController extends BaseController {
         return CommonResult.success(orderId, "ok");
     }
 
+    @ApiOperation(value = "通知已支付成功", notes = "支付中心通知本系统已经支付成功", httpMethod = "POST")
     @PostMapping("/notifyMerchantOrderPaid")
     public Integer notifyMerchantOrderPaid(String merchantOrderId) {
 
         service.updateOrderStatus(merchantOrderId, OrderStatusEnum.WAIT_DELIVER.type);
 
         return HttpStatus.OK.value();
+    }
+
+    @ApiOperation(value = "查询订单状态", notes = "查询订单状态", httpMethod = "POST")
+    @PostMapping("/getPaidOrderInfo")
+    public CommonResult getPaidOrderInfo(String orderId) {
+        return CommonResult.success(service.queryOrderStatusInfo(orderId));
     }
 
 }

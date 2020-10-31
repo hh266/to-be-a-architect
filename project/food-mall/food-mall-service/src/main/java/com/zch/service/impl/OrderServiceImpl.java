@@ -62,6 +62,7 @@ public class OrderServiceImpl implements OrderService {
      * @param submitOrderBO
      * @return
      */
+    @Transactional(propagation = Propagation.REQUIRED, rollbackFor = {})
     @Override
     public OrderVO create(SubmitOrderBO submitOrderBO) {
         String userId = submitOrderBO.getUserId();
@@ -148,9 +149,22 @@ public class OrderServiceImpl implements OrderService {
     /**
      * 关闭已超时但未支付的订单
      */
+    @Transactional(propagation = Propagation.REQUIRED, rollbackFor = {})
     @Override
     public int closeOvertimeOrders() {
        return orderMapperCustom.closeOvertimeOrder();
+    }
+
+    /**
+     * 查询订单信息
+     *
+     * @param orderId
+     * @return
+     */
+    @Transactional(propagation = Propagation.SUPPORTS, rollbackFor = {})
+    @Override
+    public OrderStatus queryOrderStatusInfo(String orderId) {
+        return orderStatusMapper.selectByPrimaryKey(orderId);
     }
 
     /**
