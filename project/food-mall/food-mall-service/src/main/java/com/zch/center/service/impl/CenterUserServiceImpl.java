@@ -37,7 +37,7 @@ public class CenterUserServiceImpl  implements CenterUserService {
     }
 
     /**
-     * 修改用户信息
+     * 修改用户信息 并返回最新信息
      *
      * @param userId
      * @param centerUserBO
@@ -49,6 +49,25 @@ public class CenterUserServiceImpl  implements CenterUserService {
         Users userInfo = new Users();
         BeanUtil.copyProperties(centerUserBO, userInfo);
         userInfo.setId(userId);
+        userInfo.setUpdatedTime(new Date());
+        usersMapper.updateByPrimaryKeySelective(userInfo);
+
+        return getUserInfoById(userId);
+    }
+
+    /**
+     * 修改用户头像 并返回最新的信息
+     *
+     * @param userId
+     * @param face
+     * @return
+     */
+    @Transactional(propagation = Propagation.REQUIRED, rollbackFor = {})
+    @Override
+    public Users updateUserFace(String userId, String face) {
+        Users userInfo = new Users();
+        userInfo.setId(userId);
+        userInfo.setFace(face);
         userInfo.setUpdatedTime(new Date());
         usersMapper.updateByPrimaryKeySelective(userInfo);
 

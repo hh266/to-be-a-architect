@@ -19,11 +19,20 @@ public interface CenterUserService {
     public Users getUserInfoById(String userId);
 
     /**
-     * 修改用户信息
+     * 修改用户信息 并返回最新的信息
      *
      * @param userId
      * @param centerUserBO
      * @return
      */
     public Users updateUserInfo(String userId, CenterUserBO centerUserBO);
+
+    /**
+     * 修改用户头像 并返回最新的信息
+     *
+     * @param userId
+     * @param face
+     * @return
+     */
+    public Users updateUserFace(String userId, String face);
 }

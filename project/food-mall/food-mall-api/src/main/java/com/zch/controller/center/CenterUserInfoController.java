@@ -152,10 +152,10 @@ public class CenterUserInfoController extends BaseController {
                 + "?t=" + System.currentTimeMillis();
 
         // 更新用户头像到数据库
-        //Users userResult = centerUserService.updateUserFace(userId, finalUserFaceUrl);
+        Users userResult = centerUserService.updateUserFace(userId, finalUserFaceUrl);
 
-        //userResult = setNullProperty(userResult);
-        //CookieUtils.setCookie(request, response, "user", JsonUtils.objectToJson(userResult), true);
+        userResult = setNullProperty(userResult);
+        CookieUtils.setCookie(request, response, "user", JsonUtils.objectToJson(userResult), true);
 
         // TODO 后续要改，增加令牌token，会整合进redis，分布式会话
 
