@@ -29,6 +29,11 @@ mybatis:
   mapper-locations: classpath:mapper/*.xml      # mapper映射文件
   configuration:
     log-impl: org.apache.ibatis.logging.stdout.StdOutImpl   #打印sql 仅适合在开发环境使用
+  servlet:
+    multipart:
+      max-file-size: 512000     # 文件上传大小限制为500kb
+      max-request-size: 512000  # 请求大小限制为500kb
+
 # pageHelper 分页配置
 pagehelper:
   helperDialect: mysql
