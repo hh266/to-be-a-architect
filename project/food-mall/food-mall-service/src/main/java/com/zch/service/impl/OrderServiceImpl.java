@@ -3,7 +3,7 @@ package com.zch.service.impl;
 import com.zch.enums.OrderStatusEnum;
 import com.zch.enums.YseOrNo;
 import com.zch.mapper.OrderItemsMapper;
-import com.zch.mapper.OrderMapperCustom;
+import com.zch.mapper.OrdersMapperCustom;
 import com.zch.mapper.OrderStatusMapper;
 import com.zch.mapper.OrdersMapper;
 import com.zch.pojo.OrderItems;
@@ -44,7 +44,7 @@ public class OrderServiceImpl implements OrderService {
     private OrderStatusMapper orderStatusMapper;
 
     @Autowired
-    private OrderMapperCustom orderMapperCustom;
+    private OrdersMapperCustom ordersMapperCustom;
 
     @Autowired
     private Sid sid;
@@ -152,7 +152,7 @@ public class OrderServiceImpl implements OrderService {
     @Transactional(propagation = Propagation.REQUIRED, rollbackFor = {})
     @Override
     public int closeOvertimeOrders() {
-       return orderMapperCustom.closeOvertimeOrder();
+       return ordersMapperCustom.closeOvertimeOrder();
     }
 
     /**
