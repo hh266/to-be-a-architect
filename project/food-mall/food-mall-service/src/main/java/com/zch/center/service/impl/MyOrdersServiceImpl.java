@@ -32,7 +32,7 @@ import java.util.Map;
  * @date 2020/11/4 16:32
  */
 @Service
-public class MyOrdersServiceImpl implements MyOrdersService {
+public class MyOrdersServiceImpl extends BaseService implements MyOrdersService {
 
     @Autowired
     private OrdersMapper ordersMapper;
@@ -142,16 +142,5 @@ public class MyOrdersServiceImpl implements MyOrdersService {
         if(result != 1){
             Asserts.fail("订单状态异常！删除失败");
         }
-    }
-
-
-    public PagedGridResult setterPagedGrid(List<?> list, Integer page) {
-        PageInfo<?> pageList = new PageInfo<>(list);
-        PagedGridResult grid = new PagedGridResult();
-        grid.setPage(page);
-        grid.setRows(list);
-        grid.setTotal(pageList.getPages());
-        grid.setRecords(pageList.getTotal());
-        return grid;
     }
 }
