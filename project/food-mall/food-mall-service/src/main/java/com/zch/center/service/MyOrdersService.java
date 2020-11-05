@@ -29,9 +29,18 @@ public interface MyOrdersService {
      * 用户修改订单状态
      *
      * @param userId
-     * @param OrderId
+     * @param orderId
      * @param status
      * @return
      */
-    public Integer updateOrderStatus(String userId, String OrderId, int status);
+    public void updateOrderStatus(String userId, String orderId, int status);
+
+    /**
+     * 用户删除订单
+     *
+     * @param userId
+     * @param orderId
+     * @return
+     */
+    public void deleteOrder(String userId, String orderId);
 }

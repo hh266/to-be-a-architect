@@ -3,6 +3,7 @@ package com.zch.controller.center;
 import cn.hutool.core.util.StrUtil;
 import com.zch.center.service.MyOrdersService;
 import com.zch.controller.BaseController;
+import com.zch.enums.OrderStatusEnum;
 import com.zch.result.CommonResult;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
@@ -50,10 +51,20 @@ public class MyOrdersController extends BaseController {
     @ApiOperation(value = "确认收货", notes = "用户确认收货", httpMethod = "POST")
     @PostMapping("/confirmReceive")
     public CommonResult confirmReceive(@RequestParam String userId,
-                                       @RequestParam String OrderId) {
-
+                                       @RequestParam String orderId) {
+        myOrdersService.updateOrderStatus(userId, orderId, OrderStatusEnum.SUCCESS.type);
        return  CommonResult.success();
     }
+
+    @ApiOperation(value = "删除订单", notes = "用户删除订单", httpMethod = "POST")
+    @PostMapping("/delete")
+    public CommonResult delete(@RequestParam String userId,
+                                       @RequestParam String orderId) {
+        myOrdersService.deleteOrder(userId, orderId);
+        return  CommonResult.success();
+    }
+
+
 
 
 }

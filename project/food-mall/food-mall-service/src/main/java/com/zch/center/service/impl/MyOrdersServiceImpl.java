@@ -4,22 +4,30 @@ import com.github.pagehelper.PageHelper;
 import com.github.pagehelper.PageInfo;
 import com.zch.center.service.MyOrdersService;
 import com.zch.enums.OrderStatusEnum;
+import com.zch.enums.YseOrNo;
+import com.zch.exception.Asserts;
 import com.zch.mapper.OrderStatusMapper;
 import com.zch.mapper.OrdersMapper;
 import com.zch.mapper.OrdersMapperCustom;
 import com.zch.pojo.OrderStatus;
 import com.zch.pojo.Orders;
+import com.zch.pojo.Users;
 import com.zch.pojo.vo.MyOrdersVO;
 import com.zch.utils.PagedGridResult;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Propagation;
+import org.springframework.transaction.annotation.Transactional;
+import tk.mybatis.mapper.entity.Example;
 
+import java.util.Date;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
 /**
  * 个人之心订单管理
+ *
  * @author zch
  * @date 2020/11/4 16:32
  */
@@ -44,6 +52,7 @@ public class MyOrdersServiceImpl implements MyOrdersService {
      * @param pageSize
      * @return
      */
+    @Transactional(propagation = Propagation.SUPPORTS, rollbackFor=Exception.class)
     @Override
     public PagedGridResult queryMyOrders(String userId, Integer orderStatus, Integer page, Integer pageSize) {
         Map<String, Object> map = new HashMap<>(2);
@@ -63,33 +72,76 @@ public class MyOrdersServiceImpl implements MyOrdersService {
     /**
      * 修改订单状态
      *
-     * @param OrderId
+     * @param orderId
      * @param status
      * @return
      */
+    @Transactional(propagation = Propagation.REQUIRED, rollbackFor = Exception.class)
     @Override
-    public Integer updateOrderStatus(String userId, String OrderId, int status) {
+    public void updateOrderStatus(String userId, String orderId, int status) {
         // 0. 判断订单是否属于用户
         Orders checkOrder = new Orders();
-        checkOrder.setId(OrderId);
+        checkOrder.setId(orderId);
         checkOrder.setUserId(userId);
 
         Orders checkOrderResult = ordersMapper.selectOne(checkOrder);
-        if(checkOrderResult == null){
-            return 0;
+        if (checkOrderResult == null) {
+            Asserts.fail("订单不存在！");
         }
 
         // 1. 根据不同的状态去修改
         // 确认收货 30 -> 40
         // 关闭交易 10 -> 50
-        if(status == OrderStatusEnum.WAIT_PAY.type){
+        Example example = new Example(OrderStatus.class);
+        Example.Criteria Criteria = example.createCriteria();
+        Criteria.andEqualTo("orderId", orderId);
 
-        }else if(status == OrderStatusEnum.WAIT_RECEIVE.type){
+        OrderStatus updateStatus = new OrderStatus();
+        updateStatus.setOrderStatus(status);
 
+        if (status == OrderStatusEnum.CLOSE.type) {
+            // 关闭交易
+            Criteria.andEqualTo("orderStatus", OrderStatusEnum.WAIT_PAY.type);
+            updateStatus.setCloseTime(new Date());
+        } else if (status == OrderStatusEnum.SUCCESS.type) {
+            // 确认收货
+            Criteria.andEqualTo("orderStatus", OrderStatusEnum.WAIT_RECEIVE.type);
+            updateStatus.setSuccessTime(new Date());
+        } else {
+            Asserts.fail("订单状态异常！");
         }
 
+        int result = orderStatusMapper.updateByExampleSelective(updateStatus, example);
 
-        return null;
+        if (result != 1) {
+            Asserts.fail("订单状态异常！");
+        }
+    }
+
+    /**
+     * 用户删除订单
+     *
+     * @param userId
+     * @param orderId
+     * @return
+     */
+    @Transactional(propagation = Propagation.REQUIRED, rollbackFor = Exception.class)
+    @Override
+    public void deleteOrder(String userId, String orderId) {
+        Example example = new Example(Orders.class);
+        Example.Criteria Criteria = example.createCriteria();
+        Criteria.andEqualTo("id", orderId);
+        Criteria.andEqualTo("userId", userId);
+        Criteria.andEqualTo("isDelete", YseOrNo.NO.type);
+
+        Orders updateOrders = new Orders();
+        updateOrders.setIsDelete(YseOrNo.YES.type);
+        updateOrders.setUpdatedTime(new Date());
+
+        int result = ordersMapper.updateByExampleSelective(updateOrders, example);
+        if(result != 1){
+            Asserts.fail("订单状态异常！删除失败");
+        }
     }
 
 
