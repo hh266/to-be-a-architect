@@ -4,7 +4,9 @@ import cn.hutool.core.util.StrUtil;
 import com.zch.center.service.MyOrdersService;
 import com.zch.controller.BaseController;
 import com.zch.enums.OrderStatusEnum;
+import com.zch.pojo.vo.OrderStatusCountsVO;
 import com.zch.result.CommonResult;
+import com.zch.utils.PagedGridResult;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import io.swagger.annotations.ApiParam;
@@ -18,6 +20,22 @@ public class MyOrdersController extends BaseController {
 
     @Autowired
     private MyOrdersService myOrdersService;
+
+
+    @ApiOperation(value = "获得订单状态数概况", notes = "获得订单状态数概况", httpMethod = "POST")
+    @PostMapping("/statusCounts")
+    public CommonResult statusCounts(
+            @ApiParam(name = "userId", value = "用户id", required = true)
+            @RequestParam String userId) {
+
+        if (StrUtil.isBlank(userId)) {
+            return CommonResult.validateFailed();
+        }
+
+        OrderStatusCountsVO result = myOrdersService.getOrderStatusCounts(userId);
+
+        return CommonResult.success(result);
+    }
 
 
     @ApiOperation(value = "查询订单列表", notes = "查询订单列表", httpMethod = "POST")
@@ -65,6 +83,31 @@ public class MyOrdersController extends BaseController {
     }
 
 
+    @ApiOperation(value = "查询订单动向", notes = "查询订单动向", httpMethod = "POST")
+    @PostMapping("/trend")
+    public CommonResult trend(
+            @ApiParam(name = "userId", value = "用户id", required = true)
+            @RequestParam String userId,
+            @ApiParam(name = "page", value = "查询下一页的第几页", required = false)
+            @RequestParam Integer page,
+            @ApiParam(name = "pageSize", value = "分页的每一页显示的条数", required = false)
+            @RequestParam Integer pageSize) {
 
+        if (StrUtil.isBlank(userId)) {
+            return CommonResult.validateFailed();
+        }
+        if (page == null) {
+            page = 1;
+        }
+        if (pageSize == null) {
+            pageSize = COMMON_PAGE_SIZE;
+        }
+
+        PagedGridResult grid = myOrdersService.getOrdersTrend(userId,
+                page,
+                pageSize);
+
+        return CommonResult.success(grid);
+    }
 
 }

@@ -13,6 +13,7 @@ import com.zch.pojo.OrderStatus;
 import com.zch.pojo.Orders;
 import com.zch.pojo.Users;
 import com.zch.pojo.vo.MyOrdersVO;
+import com.zch.pojo.vo.OrderStatusCountsVO;
 import com.zch.utils.PagedGridResult;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -52,7 +53,7 @@ public class MyOrdersServiceImpl extends BaseService implements MyOrdersService 
      * @param pageSize
      * @return
      */
-    @Transactional(propagation = Propagation.SUPPORTS, rollbackFor=Exception.class)
+    @Transactional(propagation = Propagation.SUPPORTS, rollbackFor = Exception.class)
     @Override
     public PagedGridResult queryMyOrders(String userId, Integer orderStatus, Integer page, Integer pageSize) {
         Map<String, Object> map = new HashMap<>(2);
@@ -139,8 +140,62 @@ public class MyOrdersServiceImpl extends BaseService implements MyOrdersService 
         updateOrders.setUpdatedTime(new Date());
 
         int result = ordersMapper.updateByExampleSelective(updateOrders, example);
-        if(result != 1){
+        if (result != 1) {
             Asserts.fail("订单状态异常！删除失败");
         }
+    }
+
+    /**
+     * 获取不同状态的订单数量
+     *
+     * @param userId
+     * @return
+     */
+    @Transactional(propagation = Propagation.SUPPORTS, rollbackFor = Exception.class)
+    @Override
+    public OrderStatusCountsVO getOrderStatusCounts(String userId) {
+
+        Map<String, Object> map = new HashMap<>();
+        map.put("userId", userId);
+
+        map.put("orderStatus", OrderStatusEnum.WAIT_PAY.type);
+        int waitPayCounts = ordersMapperCustom.getMyOrderStatusCounts(map);
+
+        map.put("orderStatus", OrderStatusEnum.WAIT_DELIVER.type);
+        int waitDeliverCounts = ordersMapperCustom.getMyOrderStatusCounts(map);
+
+        map.put("orderStatus", OrderStatusEnum.WAIT_RECEIVE.type);
+        int waitReceiveCounts = ordersMapperCustom.getMyOrderStatusCounts(map);
+
+        map.put("orderStatus", OrderStatusEnum.SUCCESS.type);
+        map.put("isComment", YseOrNo.NO.type);
+        int waitCommentCounts = ordersMapperCustom.getMyOrderStatusCounts(map);
+
+        OrderStatusCountsVO countsVO = new OrderStatusCountsVO(waitPayCounts,
+                waitDeliverCounts,
+                waitReceiveCounts,
+                waitCommentCounts);
+        return countsVO;
+    }
+
+    /**
+     * 获得分页的订单动向
+     *
+     * @param userId
+     * @param page
+     * @param pageSize
+     * @return
+     */
+    @Transactional(propagation = Propagation.SUPPORTS)
+    @Override
+    public PagedGridResult getOrdersTrend(String userId, Integer page, Integer pageSize) {
+
+        Map<String, Object> map = new HashMap<>();
+        map.put("userId", userId);
+
+        PageHelper.startPage(page, pageSize);
+        List<OrderStatus> list = ordersMapperCustom.getMyOrderTrend(map);
+
+        return setterPagedGrid(list, page);
     }
 }

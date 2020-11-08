@@ -1,5 +1,6 @@
 package com.zch.mapper;
 
+import com.zch.pojo.OrderStatus;
 import com.zch.pojo.vo.MyOrdersVO;
 import org.apache.ibatis.annotations.Param;
 
@@ -28,4 +29,22 @@ public interface OrdersMapperCustom {
      * @return
      */
     public List<MyOrdersVO> queryMyOrders(@Param("paramsMap") Map<String, Object> map);
+
+    /**
+     * 获取订单数量
+     *
+     * @param map
+     * @return
+     */
+    public int getMyOrderStatusCounts(@Param("paramsMap") Map<String, Object> map);
+
+
+    /**
+     * 获取订单动向
+     *
+     * @param map
+     * @return
+     */
+    public List<OrderStatus> getMyOrderTrend(@Param("paramsMap") Map<String, Object> map);
+
 }
