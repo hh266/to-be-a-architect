@@ -10,6 +10,8 @@ import javax.validation.constraints.NotBlank;
  */
 public class OrderItemsCommentBO {
 
+    private String commentId;
+
     @NotBlank(message = "商品id不能为空")
     private String itemId;
 
@@ -29,6 +31,13 @@ public class OrderItemsCommentBO {
     @NotBlank(message = "商评论内容不能为空")
     private String content;
 
+    public String getCommentId() {
+        return commentId;
+    }
+
+    public void setCommentId(String commentId) {
+        this.commentId = commentId;
+    }
 
     public String getItemId() {
         return itemId;

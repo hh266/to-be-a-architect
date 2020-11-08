@@ -2,6 +2,7 @@ package com.zch.center.service;
 
 import com.zch.pojo.OrderItems;
 import com.zch.pojo.bo.center.OrderItemsCommentBO;
+import com.zch.utils.PagedGridResult;
 
 import java.util.List;
 
@@ -29,4 +30,14 @@ public interface MyCommentsService {
      * @param commentBOList
      */
     public void saveCommentList(String userId, String orderId, List<OrderItemsCommentBO> commentBOList);
+
+    /**
+     * 我的评价查询 分页
+     *
+     * @param userId
+     * @param page
+     * @param pageSize
+     * @return
+     */
+    public PagedGridResult queryMyComments(String userId, Integer page, Integer pageSize);
 }
