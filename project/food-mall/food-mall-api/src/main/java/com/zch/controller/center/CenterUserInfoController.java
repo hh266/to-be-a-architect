@@ -1,6 +1,6 @@
 package com.zch.controller.center;
 
-import cn.hutool.core.date.DateUtil;
+import cn.hutool.core.io.IoUtil;
 import cn.hutool.core.util.StrUtil;
 import com.zch.center.service.CenterUserService;
 import com.zch.controller.BaseController;
@@ -13,12 +13,12 @@ import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import io.swagger.annotations.ApiParam;
 import com.zch.resource.FileUpload;
-import org.apache.tomcat.util.http.fileupload.IOUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.validation.BindingResult;
 import org.springframework.validation.FieldError;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
+
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -27,7 +27,6 @@ import java.io.File;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.InputStream;
-import java.util.Date;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -125,7 +124,7 @@ public class CenterUserInfoController extends BaseController {
                     // 文件输出保存到目录
                     fileOutputStream = new FileOutputStream(outFile);
                     InputStream inputStream = file.getInputStream();
-                    IOUtils.copy(inputStream, fileOutputStream);
+                    IoUtil.copy(inputStream, fileOutputStream);
                 }
             } catch (IOException e) {
                 e.printStackTrace();

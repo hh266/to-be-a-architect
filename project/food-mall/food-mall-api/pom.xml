@@ -11,6 +11,10 @@
 
     <artifactId>food-mall-api</artifactId>
 
+    <!--<packaging>jar</packaging>-->
+    <!-- 打包war [1] -->
+    <packaging>war</packaging>
+
     <dependencies>
         <dependency>
             <groupId>com.zch</groupId>
