@@ -38,6 +38,6 @@ public class BaseController {
      * 微信支付成功 -> 支付中心 -> 天天吃货平台
      * 回调中心的url
      */
-    String payReturnUrl = "http://3p3jn3.natappfree.cc/orders/notifyMerchantOrderPaid";
+    String payReturnUrl = "http://api.52java.online:8088/food-mall-api/orders/notifyMerchantOrderPaid";
 
 }
