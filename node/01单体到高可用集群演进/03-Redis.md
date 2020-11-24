@@ -59,6 +59,41 @@
 
 https://class.imooc.com/lesson/1228#mid=29188
 
+1. yum 直接安装
+
+   ```shell
+   # yum install -y redis 
+   ```
+
+2. 修改配置文件
+
+   ```shell
+   # cd /etc  配置文件目录 
+   # cp redis.conf redis.conf.bat 备份配置文件
+   # vim redis.conf 修改配置文件
+   ```
+
+   修改内容：
+
+   - daemonize no 修改为 daemonize yes 目的是为了让redis在linux后台运行
+   - dir /var/lib/redis linux 的工作目录 这里我没有改
+   - bind 127.0.0.1 释放注释，否则只有本机能用
+   - requirepass 123456 设置密码
+
+3. 管理 redis service
+
+   ```shel
+   # systemctl start redis 启动
+   # systemctl status redis 查看状态
+   # systemctl stop redis 停止服务
+   # systemctl restart redis 重启服务
+   # systemctl enable redis 设置开机启动
+   # ps -ef | grep redis 查看redis进程
+   ```
+
+   
+
 
 
 ## 6.常见的数据类型
+
