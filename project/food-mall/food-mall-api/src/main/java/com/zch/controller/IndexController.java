@@ -1,9 +1,14 @@
 package com.zch.controller;
 
+import cn.hutool.core.util.StrUtil;
+import cn.hutool.json.JSONUtil;
 import com.zch.enums.YseOrNo;
+import com.zch.pojo.Carousel;
 import com.zch.result.CommonResult;
 import com.zch.service.CarouselService;
 import com.zch.service.CategoryService;
+import com.zch.utils.JsonUtils;
+import com.zch.utils.RedisOperator;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import io.swagger.annotations.ApiParam;
@@ -12,6 +17,9 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
+
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  * 首页数据接口
@@ -29,6 +37,9 @@ public class IndexController {
     @Autowired
     private CategoryService categoryService;
 
+    @Autowired
+    private RedisOperator redisOperator;
+
     /**
      * 获取轮播图
      *
@@ -37,7 +48,19 @@ public class IndexController {
     @ApiOperation(value = "获取轮播图", notes = "获取轮播图", httpMethod = "GET")
     @GetMapping("/carousel")
     public CommonResult carousel() {
-        return CommonResult.success(carouselService.queryAll(YseOrNo.YES.type));
+
+        List<Carousel> carouselList = new ArrayList<>();
+        String carouselStr = redisOperator.get("carousel");
+
+        if (StrUtil.isBlank(carouselStr)) {
+            carouselList = carouselService.queryAll(YseOrNo.YES.type);
+            redisOperator.set("carousel", JsonUtils.objectToJson(carouselList));
+        } else{
+            carouselList = JsonUtils.jsonToList(carouselStr, Carousel.class);
+        }
+
+
+        return CommonResult.success(carouselList);
     }
 
 
@@ -62,8 +85,8 @@ public class IndexController {
     @GetMapping("/subCat/{rootCatId}")
     public CommonResult subCat(
             @ApiParam(name = "rootCatId", value = "一级分类id", required = true)
-            @PathVariable Integer rootCatId ) {
-        if (rootCatId == null){
+            @PathVariable Integer rootCatId) {
+        if (rootCatId == null) {
             CommonResult.validateFailed();
         }
         return CommonResult.success(categoryService.getSubCatList(rootCatId));
@@ -78,8 +101,8 @@ public class IndexController {
     @GetMapping("/sixNewItems/{rootCatId}")
     public CommonResult sixNewItems(
             @ApiParam(name = "rootCatId", value = "一级分类id", required = true)
-            @PathVariable Integer rootCatId ) {
-        if (rootCatId == null){
+            @PathVariable Integer rootCatId) {
+        if (rootCatId == null) {
             CommonResult.validateFailed();
         }
         return CommonResult.success(categoryService.getSixNewItemsLazy(rootCatId));
