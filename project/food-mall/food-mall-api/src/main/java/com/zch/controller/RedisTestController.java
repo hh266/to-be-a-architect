@@ -1,6 +1,7 @@
 package com.zch.controller;
 
 import com.zch.result.CommonResult;
+import com.zch.utils.RedisOperator;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.redis.core.RedisTemplate;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -18,21 +19,22 @@ import springfox.documentation.annotations.ApiIgnore;
 public class RedisTestController {
 
     @Autowired
-    private RedisTemplate redisTemplate;
+    private RedisOperator redisOperator;
 
     @GetMapping("/set")
     public CommonResult set(String key, String value){
-        redisTemplate.opsForValue().set(key, value);
+        redisOperator.set(key, value);
         return CommonResult.success();
     }
 
     @GetMapping("/get")
     public CommonResult get(String key){
-        return CommonResult.success(redisTemplate.opsForValue().get(key));
+        return CommonResult.success(redisOperator.get(key));
     }
 
     @GetMapping("/delete")
     public CommonResult delete(String key){
-        return CommonResult.success(redisTemplate.delete(key));
+        redisOperator.del(key);
+        return CommonResult.success();
     }
 }
