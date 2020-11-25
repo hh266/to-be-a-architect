@@ -1,9 +1,10 @@
 package com.zch.controller;
 
 import cn.hutool.core.util.StrUtil;
-import cn.hutool.json.JSONUtil;
 import com.zch.enums.YseOrNo;
 import com.zch.pojo.Carousel;
+import com.zch.pojo.Category;
+import com.zch.pojo.vo.CategoryVO;
 import com.zch.result.CommonResult;
 import com.zch.service.CarouselService;
 import com.zch.service.CategoryService;
@@ -55,7 +56,7 @@ public class IndexController {
         if (StrUtil.isBlank(carouselStr)) {
             carouselList = carouselService.queryAll(YseOrNo.YES.type);
             redisOperator.set("carousel", JsonUtils.objectToJson(carouselList));
-        } else{
+        } else {
             carouselList = JsonUtils.jsonToList(carouselStr, Carousel.class);
         }
 
@@ -72,7 +73,17 @@ public class IndexController {
     @ApiOperation(value = "查询所有商品一级分类", notes = "查询所有商品一级分类", httpMethod = "GET")
     @GetMapping("/cats")
     public CommonResult cats() {
-        return CommonResult.success(categoryService.queryAllRootLevelCat());
+
+        List<Category> categoryList = new ArrayList<>();
+        String categoryStr = redisOperator.get("category");
+        if (StrUtil.isBlank(categoryStr)) {
+            categoryList = categoryService.queryAllRootLevelCat();
+            redisOperator.set("category", JsonUtils.objectToJson(categoryList));
+        } else {
+            categoryList = JsonUtils.jsonToList(categoryStr, Category.class);
+        }
+
+        return CommonResult.success(categoryList);
     }
 
 
@@ -89,7 +100,18 @@ public class IndexController {
         if (rootCatId == null) {
             CommonResult.validateFailed();
         }
-        return CommonResult.success(categoryService.getSubCatList(rootCatId));
+
+        List<CategoryVO> categoryVOList = new ArrayList<>();
+        String categoryStr = redisOperator.get("category" + rootCatId);
+
+        if (StrUtil.isBlank(categoryStr)) {
+            categoryVOList = categoryService.getSubCatList(rootCatId);
+            redisOperator.set("category" + rootCatId, JsonUtils.objectToJson(categoryVOList));
+        } else {
+            categoryVOList = JsonUtils.jsonToList(categoryStr, CategoryVO.class);
+        }
+
+        return CommonResult.success(categoryVOList);
     }
 
     /**
