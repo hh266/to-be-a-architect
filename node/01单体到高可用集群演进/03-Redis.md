@@ -77,10 +77,11 @@ https://class.imooc.com/lesson/1228#mid=29188
 
    - daemonize no 修改为 daemonize yes 目的是为了让redis在linux后台运行
    - dir /var/lib/redis linux 的工作目录 这里我没有改
-   - bind 127.0.0.1 释放注释，否则只有本机能用
+   - bind 0.0.0.0 ，否则只有本机能用
    - requirepass 123456 设置密码
 
 3. 管理 redis service
+
 
    ```shel
    # systemctl start redis 启动
@@ -91,9 +92,96 @@ https://class.imooc.com/lesson/1228#mid=29188
    # ps -ef | grep redis 查看redis进程
    ```
 
-   
+ 4. 使用redis客户端连接测试，
 
+    [码云下载地址]: https://gitee.com/qishibo/AnotherRedisDesktopManager/releases
+
+   
 
 
 ## 6.常见的数据类型
 
+- String
+
+- hash
+
+- list
+
+- set
+
+- zset
+
+  参考： http://redisdoc.com/
+
+# SpringBoot 整合Redis
+
+## SpringBoot 引入redis
+
+1. 引入依赖
+
+   ```xml
+   <dependency>
+       <groupId>org.springframework.boot</groupId>
+       <artifactId>spring-boot-starter-data-redis</artifactId>
+   </dependency>
+   ```
+
+   
+2. 配置redis
+
+   ```yml
+   spring:
+     redis:
+       database: 1
+       host: 192.168.1.191
+       port: 6379
+       password: imooc
+   ```
+
+   
+
+3. controller 测试
+
+   ```java
+   package com.zch.controller;
+   
+   import com.zch.result.CommonResult;
+   import org.springframework.beans.factory.annotation.Autowired;
+   import org.springframework.data.redis.core.RedisTemplate;
+   import org.springframework.web.bind.annotation.GetMapping;
+   import org.springframework.web.bind.annotation.RequestMapping;
+   import org.springframework.web.bind.annotation.RestController;
+   import springfox.documentation.annotations.ApiIgnore;
+   
+   /**
+    * @author zch
+    * @date 2020/11/25 16:25
+    */
+   @ApiIgnore
+   @RestController
+   @RequestMapping("/redis")
+   public class RedisTestController {
+   
+       @Autowired
+       private RedisTemplate redisTemplate;
+   
+       @GetMapping("/set")
+       public CommonResult set(String key, String value){
+           redisTemplate.opsForValue().set(key, value);
+           return CommonResult.success();
+       }
+   
+       @GetMapping("/get")
+       public CommonResult get(String key){
+           return CommonResult.success(redisTemplate.opsForValue().get(key));
+       }
+   
+       @GetMapping("/delete")
+       public CommonResult delete(String key){
+           return CommonResult.success(redisTemplate.delete(key));
+       }
+   }
+   
+   ```
+
+   
