@@ -6,7 +6,7 @@ spring:
     url: jdbc:mysql://115.159.114.72:3306/food-mall?useUnicode=true&characterEncoding=UTF-8&autoReconnect=true
     password: admin123456
   redis:
-    database: 0
+    database: 1
     host: 115.159.114.72
     port: 6379
     password: 123456

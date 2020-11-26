@@ -102,11 +102,11 @@ public class IndexController {
         }
 
         List<CategoryVO> categoryVOList = new ArrayList<>();
-        String categoryStr = redisOperator.get("category" + rootCatId);
+        String categoryStr = redisOperator.get("category" + "_" + rootCatId);
 
         if (StrUtil.isBlank(categoryStr)) {
             categoryVOList = categoryService.getSubCatList(rootCatId);
-            redisOperator.set("category" + rootCatId, JsonUtils.objectToJson(categoryVOList));
+            redisOperator.set("category" + "_" + rootCatId, JsonUtils.objectToJson(categoryVOList));
         } else {
             categoryVOList = JsonUtils.jsonToList(categoryStr, CategoryVO.class);
         }
