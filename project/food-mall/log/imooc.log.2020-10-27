@@ -1,0 +1,462 @@
+2020-10-27 16:18:01 INFO  Version:21 - HV000001: Hibernate Validator 6.0.16.Final
+2020-10-27 16:18:02 INFO  Application:50 - Starting Application on 2016-20190327SK with PID 7820 (G:\imooc\to-be-a-architect\project\food-mall\food-mall-api\target\classes started by Administrator in G:\imooc\to-be-a-architect\project\food-mall)
+2020-10-27 16:18:02 INFO  Application:675 - No active profile set, falling back to default profiles: default
+2020-10-27 16:18:05 WARN  ClassPathMapperScanner:44 - No MyBatis mapper was found in '[com.zch]' package. Please check your configuration.
+2020-10-27 16:18:05 INFO  PostProcessorRegistrationDelegate$BeanPostProcessorChecker:330 - Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration$$EnhancerBySpringCGLIB$$355e6147] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-10-27 16:18:06 INFO  TomcatWebServer:90 - Tomcat initialized with port(s): 8088 (http)
+2020-10-27 16:18:06 INFO  ContextLoader:296 - Root WebApplicationContext: initialization completed in 4167 ms
+2020-10-27 16:18:10 INFO  ThreadPoolTaskExecutor:171 - Initializing ExecutorService 'applicationTaskExecutor'
+2020-10-27 16:18:10 INFO  MapperCacheDisabler:60 - Clear tk.mybatis.mapper.util.MsUtil CLASS_CACHE cache.
+2020-10-27 16:18:10 INFO  MapperCacheDisabler:60 - Clear tk.mybatis.mapper.genid.GenIdUtil CACHE cache.
+2020-10-27 16:18:10 INFO  MapperCacheDisabler:60 - Clear tk.mybatis.mapper.version.VersionUtil CACHE cache.
+2020-10-27 16:18:10 INFO  MapperCacheDisabler:83 - Clear EntityHelper entityTableMap cache.
+2020-10-27 16:18:10 INFO  ThreadPoolTaskScheduler:171 - Initializing ExecutorService 'taskScheduler'
+2020-10-27 16:18:10 INFO  DocumentationPluginsBootstrapper:84 - Context refreshed
+2020-10-27 16:18:10 INFO  DocumentationPluginsBootstrapper:87 - Found 1 custom documentation plugin(s)
+2020-10-27 16:18:10 INFO  ApiListingReferenceScanner:44 - Scanning for api listing references
+2020-10-27 16:18:11 INFO  CachingOperationNameGenerator:40 - Generating unique operation named: addUsingPOST_1
+2020-10-27 16:18:11 INFO  TomcatWebServer:204 - Tomcat started on port(s): 8088 (http) with context path ''
+2020-10-27 16:18:11 INFO  Application:59 - Started Application in 10.21 seconds (JVM running for 13.405)
+2020-10-27 16:18:12 INFO  ServiceLogAspect:49 - ======== 开始执行 class com.zch.service.impl.OrderServiceImpl.closeOvertimeOrders =========
+2020-10-27 16:18:12 INFO  HikariDataSource:110 - HikariPool-1 - Starting...
+2020-10-27 16:18:14 INFO  HikariDataSource:123 - HikariPool-1 - Start completed.
+2020-10-27 16:18:14 WARN  ServiceLogAspect:66 - ====== 执行结束，耗时 2731 毫秒 ======
+2020-10-27 16:18:15 INFO  ServiceLogAspect:49 - ======== 开始执行 class com.zch.service.impl.OrderServiceImpl.closeOvertimeOrders =========
+2020-10-27 16:18:15 INFO  ServiceLogAspect:68 - ====== 执行结束，耗时 6 毫秒 ======
+2020-10-27 16:18:18 INFO  ServiceLogAspect:49 - ======== 开始执行 class com.zch.service.impl.OrderServiceImpl.closeOvertimeOrders =========
+2020-10-27 16:18:18 INFO  ServiceLogAspect:68 - ====== 执行结束，耗时 4 毫秒 ======
+2020-10-27 16:18:21 INFO  ServiceLogAspect:49 - ======== 开始执行 class com.zch.service.impl.OrderServiceImpl.closeOvertimeOrders =========
+2020-10-27 16:18:21 INFO  ServiceLogAspect:68 - ====== 执行结束，耗时 3 毫秒 ======
+2020-10-27 16:18:24 INFO  ServiceLogAspect:49 - ======== 开始执行 class com.zch.service.impl.OrderServiceImpl.closeOvertimeOrders =========
+2020-10-27 16:18:24 INFO  ServiceLogAspect:68 - ====== 执行结束，耗时 5 毫秒 ======
+2020-10-27 16:18:27 INFO  ServiceLogAspect:49 - ======== 开始执行 class com.zch.service.impl.OrderServiceImpl.closeOvertimeOrders =========
+2020-10-27 16:18:27 INFO  ServiceLogAspect:68 - ====== 执行结束，耗时 10 毫秒 ======
+2020-10-27 16:18:30 INFO  ServiceLogAspect:49 - ======== 开始执行 class com.zch.service.impl.OrderServiceImpl.closeOvertimeOrders =========
+2020-10-27 16:18:30 INFO  ServiceLogAspect:68 - ====== 执行结束，耗时 5 毫秒 ======
+2020-10-27 16:18:33 INFO  ServiceLogAspect:49 - ======== 开始执行 class com.zch.service.impl.OrderServiceImpl.closeOvertimeOrders =========
+2020-10-27 16:18:33 INFO  ServiceLogAspect:68 - ====== 执行结束，耗时 5 毫秒 ======
+2020-10-27 16:18:36 INFO  ServiceLogAspect:49 - ======== 开始执行 class com.zch.service.impl.OrderServiceImpl.closeOvertimeOrders =========
+2020-10-27 16:18:36 INFO  ServiceLogAspect:68 - ====== 执行结束，耗时 3 毫秒 ======
+2020-10-27 16:18:39 INFO  ServiceLogAspect:49 - ======== 开始执行 class com.zch.service.impl.OrderServiceImpl.closeOvertimeOrders =========
+2020-10-27 16:18:39 INFO  ServiceLogAspect:68 - ====== 执行结束，耗时 4 毫秒 ======
+2020-10-27 16:18:42 INFO  ServiceLogAspect:49 - ======== 开始执行 class com.zch.service.impl.OrderServiceImpl.closeOvertimeOrders =========
+2020-10-27 16:18:42 INFO  ServiceLogAspect:68 - ====== 执行结束，耗时 4 毫秒 ======
+2020-10-27 16:18:45 INFO  ServiceLogAspect:49 - ======== 开始执行 class com.zch.service.impl.OrderServiceImpl.closeOvertimeOrders =========
+2020-10-27 16:18:45 INFO  ServiceLogAspect:68 - ====== 执行结束，耗时 4 毫秒 ======
+2020-10-27 16:18:48 INFO  ServiceLogAspect:49 - ======== 开始执行 class com.zch.service.impl.OrderServiceImpl.closeOvertimeOrders =========
+2020-10-27 16:18:48 INFO  ServiceLogAspect:68 - ====== 执行结束，耗时 3 毫秒 ======
+2020-10-27 16:18:51 INFO  ServiceLogAspect:49 - ======== 开始执行 class com.zch.service.impl.OrderServiceImpl.closeOvertimeOrders =========
+2020-10-27 16:18:51 INFO  ServiceLogAspect:68 - ====== 执行结束，耗时 5 毫秒 ======
+2020-10-27 16:18:54 INFO  ServiceLogAspect:49 - ======== 开始执行 class com.zch.service.impl.OrderServiceImpl.closeOvertimeOrders =========
+2020-10-27 16:18:54 INFO  ServiceLogAspect:68 - ====== 执行结束，耗时 4 毫秒 ======
+2020-10-27 16:18:57 INFO  ServiceLogAspect:49 - ======== 开始执行 class com.zch.service.impl.OrderServiceImpl.closeOvertimeOrders =========
+2020-10-27 16:18:57 INFO  ServiceLogAspect:68 - ====== 执行结束，耗时 7 毫秒 ======
+2020-10-27 16:19:00 INFO  ServiceLogAspect:49 - ======== 开始执行 class com.zch.service.impl.OrderServiceImpl.closeOvertimeOrders =========
+2020-10-27 16:19:00 INFO  ServiceLogAspect:68 - ====== 执行结束，耗时 3 毫秒 ======
+2020-10-27 16:19:03 INFO  ServiceLogAspect:49 - ======== 开始执行 class com.zch.service.impl.OrderServiceImpl.closeOvertimeOrders =========
+2020-10-27 16:19:03 INFO  ServiceLogAspect:68 - ====== 执行结束，耗时 4 毫秒 ======
+2020-10-27 16:19:04 INFO  DispatcherServlet:524 - Initializing Servlet 'dispatcherServlet'
+2020-10-27 16:19:04 INFO  DispatcherServlet:546 - Completed initialization in 26 ms
+2020-10-27 16:19:06 INFO  ServiceLogAspect:49 - ======== 开始执行 class com.zch.service.impl.OrderServiceImpl.closeOvertimeOrders =========
+2020-10-27 16:19:06 INFO  ServiceLogAspect:68 - ====== 执行结束，耗时 3 毫秒 ======
+2020-10-27 16:19:09 INFO  ServiceLogAspect:49 - ======== 开始执行 class com.zch.service.impl.OrderServiceImpl.closeOvertimeOrders =========
+2020-10-27 16:19:09 INFO  ServiceLogAspect:68 - ====== 执行结束，耗时 5 毫秒 ======
+2020-10-27 16:19:12 INFO  ServiceLogAspect:49 - ======== 开始执行 class com.zch.service.impl.OrderServiceImpl.closeOvertimeOrders =========
+2020-10-27 16:19:12 INFO  ServiceLogAspect:68 - ====== 执行结束，耗时 10 毫秒 ======
+2020-10-27 16:19:15 INFO  ServiceLogAspect:49 - ======== 开始执行 class com.zch.service.impl.OrderServiceImpl.closeOvertimeOrders =========
+2020-10-27 16:19:15 INFO  ServiceLogAspect:68 - ====== 执行结束，耗时 5 毫秒 ======
+2020-10-27 16:19:18 INFO  ServiceLogAspect:49 - ======== 开始执行 class com.zch.service.impl.OrderServiceImpl.closeOvertimeOrders =========
+2020-10-27 16:19:18 INFO  ServiceLogAspect:68 - ====== 执行结束，耗时 3 毫秒 ======
+2020-10-27 16:19:20 INFO  ServiceLogAspect:49 - ======== 开始执行 class com.zch.service.impl.OrderServiceImpl.updateOrderStatus =========
+2020-10-27 16:19:20 INFO  ServiceLogAspect:68 - ====== 执行结束，耗时 51 毫秒 ======
+2020-10-27 16:19:21 INFO  ServiceLogAspect:49 - ======== 开始执行 class com.zch.service.impl.OrderServiceImpl.closeOvertimeOrders =========
+2020-10-27 16:19:21 INFO  ServiceLogAspect:68 - ====== 执行结束，耗时 3 毫秒 ======
+2020-10-27 16:19:24 INFO  ServiceLogAspect:49 - ======== 开始执行 class com.zch.service.impl.OrderServiceImpl.closeOvertimeOrders =========
+2020-10-27 16:19:24 INFO  ServiceLogAspect:68 - ====== 执行结束，耗时 4 毫秒 ======
+2020-10-27 16:19:27 INFO  ServiceLogAspect:49 - ======== 开始执行 class com.zch.service.impl.OrderServiceImpl.closeOvertimeOrders =========
+2020-10-27 16:19:27 INFO  ServiceLogAspect:68 - ====== 执行结束，耗时 5 毫秒 ======
+2020-10-27 16:19:30 INFO  ServiceLogAspect:49 - ======== 开始执行 class com.zch.service.impl.OrderServiceImpl.closeOvertimeOrders =========
+2020-10-27 16:19:30 INFO  ServiceLogAspect:68 - ====== 执行结束，耗时 3 毫秒 ======
+2020-10-27 16:19:33 INFO  ServiceLogAspect:49 - ======== 开始执行 class com.zch.service.impl.OrderServiceImpl.closeOvertimeOrders =========
+2020-10-27 16:19:33 INFO  ServiceLogAspect:68 - ====== 执行结束，耗时 3 毫秒 ======
+2020-10-27 16:19:36 INFO  ServiceLogAspect:49 - ======== 开始执行 class com.zch.service.impl.OrderServiceImpl.closeOvertimeOrders =========
+2020-10-27 16:19:36 INFO  ServiceLogAspect:68 - ====== 执行结束，耗时 4 毫秒 ======
+2020-10-27 16:19:39 INFO  ServiceLogAspect:49 - ======== 开始执行 class com.zch.service.impl.OrderServiceImpl.closeOvertimeOrders =========
+2020-10-27 16:19:39 INFO  ServiceLogAspect:68 - ====== 执行结束，耗时 3 毫秒 ======
+2020-10-27 16:19:42 INFO  ServiceLogAspect:49 - ======== 开始执行 class com.zch.service.impl.OrderServiceImpl.closeOvertimeOrders =========
+2020-10-27 16:19:42 INFO  ServiceLogAspect:68 - ====== 执行结束，耗时 4 毫秒 ======
+2020-10-27 16:19:45 INFO  ServiceLogAspect:49 - ======== 开始执行 class com.zch.service.impl.OrderServiceImpl.closeOvertimeOrders =========
+2020-10-27 16:19:45 INFO  ServiceLogAspect:68 - ====== 执行结束，耗时 4 毫秒 ======
+2020-10-27 16:19:48 INFO  ServiceLogAspect:49 - ======== 开始执行 class com.zch.service.impl.OrderServiceImpl.closeOvertimeOrders =========
+2020-10-27 16:19:48 INFO  ServiceLogAspect:68 - ====== 执行结束，耗时 4 毫秒 ======
+2020-10-27 16:19:51 INFO  ServiceLogAspect:49 - ======== 开始执行 class com.zch.service.impl.OrderServiceImpl.closeOvertimeOrders =========
+2020-10-27 16:19:51 INFO  ServiceLogAspect:68 - ====== 执行结束，耗时 4 毫秒 ======
+2020-10-27 16:19:54 INFO  ServiceLogAspect:49 - ======== 开始执行 class com.zch.service.impl.OrderServiceImpl.closeOvertimeOrders =========
+2020-10-27 16:19:54 INFO  ServiceLogAspect:68 - ====== 执行结束，耗时 3 毫秒 ======
+2020-10-27 16:19:57 INFO  ServiceLogAspect:49 - ======== 开始执行 class com.zch.service.impl.OrderServiceImpl.closeOvertimeOrders =========
+2020-10-27 16:19:57 INFO  ServiceLogAspect:68 - ====== 执行结束，耗时 4 毫秒 ======
+2020-10-27 16:20:00 INFO  ServiceLogAspect:49 - ======== 开始执行 class com.zch.service.impl.OrderServiceImpl.closeOvertimeOrders =========
+2020-10-27 16:20:00 INFO  ServiceLogAspect:68 - ====== 执行结束，耗时 3 毫秒 ======
+2020-10-27 16:20:03 INFO  ServiceLogAspect:49 - ======== 开始执行 class com.zch.service.impl.OrderServiceImpl.closeOvertimeOrders =========
+2020-10-27 16:20:03 INFO  ServiceLogAspect:68 - ====== 执行结束，耗时 4 毫秒 ======
+2020-10-27 16:20:06 INFO  ServiceLogAspect:49 - ======== 开始执行 class com.zch.service.impl.OrderServiceImpl.closeOvertimeOrders =========
+2020-10-27 16:20:06 INFO  ServiceLogAspect:68 - ====== 执行结束，耗时 3 毫秒 ======
+2020-10-27 16:20:09 INFO  ServiceLogAspect:49 - ======== 开始执行 class com.zch.service.impl.OrderServiceImpl.closeOvertimeOrders =========
+2020-10-27 16:20:09 INFO  ServiceLogAspect:68 - ====== 执行结束，耗时 3 毫秒 ======
+2020-10-27 16:20:12 INFO  ServiceLogAspect:49 - ======== 开始执行 class com.zch.service.impl.OrderServiceImpl.closeOvertimeOrders =========
+2020-10-27 16:20:12 INFO  ServiceLogAspect:68 - ====== 执行结束，耗时 3 毫秒 ======
+2020-10-27 16:20:15 INFO  ServiceLogAspect:49 - ======== 开始执行 class com.zch.service.impl.OrderServiceImpl.closeOvertimeOrders =========
+2020-10-27 16:20:15 INFO  ServiceLogAspect:68 - ====== 执行结束，耗时 3 毫秒 ======
+2020-10-27 16:20:18 INFO  ServiceLogAspect:49 - ======== 开始执行 class com.zch.service.impl.OrderServiceImpl.closeOvertimeOrders =========
+2020-10-27 16:20:18 INFO  ServiceLogAspect:68 - ====== 执行结束，耗时 47 毫秒 ======
+2020-10-27 16:20:21 INFO  ServiceLogAspect:49 - ======== 开始执行 class com.zch.service.impl.OrderServiceImpl.closeOvertimeOrders =========
+2020-10-27 16:20:21 INFO  ServiceLogAspect:68 - ====== 执行结束，耗时 5 毫秒 ======
+2020-10-27 16:20:24 INFO  ServiceLogAspect:49 - ======== 开始执行 class com.zch.service.impl.OrderServiceImpl.closeOvertimeOrders =========
+2020-10-27 16:20:24 INFO  ServiceLogAspect:68 - ====== 执行结束，耗时 3 毫秒 ======
+2020-10-27 16:20:27 INFO  ServiceLogAspect:49 - ======== 开始执行 class com.zch.service.impl.OrderServiceImpl.closeOvertimeOrders =========
+2020-10-27 16:20:27 INFO  ServiceLogAspect:68 - ====== 执行结束，耗时 4 毫秒 ======
+2020-10-27 16:20:30 INFO  ServiceLogAspect:49 - ======== 开始执行 class com.zch.service.impl.OrderServiceImpl.closeOvertimeOrders =========
+2020-10-27 16:20:30 INFO  ServiceLogAspect:68 - ====== 执行结束，耗时 5 毫秒 ======
+2020-10-27 16:20:33 INFO  ServiceLogAspect:49 - ======== 开始执行 class com.zch.service.impl.OrderServiceImpl.closeOvertimeOrders =========
+2020-10-27 16:20:33 INFO  ServiceLogAspect:68 - ====== 执行结束，耗时 3 毫秒 ======
+2020-10-27 16:20:43 INFO  Version:21 - HV000001: Hibernate Validator 6.0.16.Final
+2020-10-27 16:20:44 INFO  Application:50 - Starting Application on 2016-20190327SK with PID 8236 (G:\imooc\to-be-a-architect\project\food-mall\food-mall-api\target\classes started by Administrator in G:\imooc\to-be-a-architect\project\food-mall)
+2020-10-27 16:20:44 INFO  Application:675 - No active profile set, falling back to default profiles: default
+2020-10-27 16:20:46 WARN  ClassPathMapperScanner:44 - No MyBatis mapper was found in '[com.zch]' package. Please check your configuration.
+2020-10-27 16:20:46 INFO  PostProcessorRegistrationDelegate$BeanPostProcessorChecker:330 - Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration$$EnhancerBySpringCGLIB$$220dd240] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-10-27 16:20:47 INFO  TomcatWebServer:90 - Tomcat initialized with port(s): 8088 (http)
+2020-10-27 16:20:47 INFO  ContextLoader:296 - Root WebApplicationContext: initialization completed in 2273 ms
+2020-10-27 16:20:49 INFO  ThreadPoolTaskExecutor:171 - Initializing ExecutorService 'applicationTaskExecutor'
+2020-10-27 16:20:49 INFO  MapperCacheDisabler:60 - Clear tk.mybatis.mapper.util.MsUtil CLASS_CACHE cache.
+2020-10-27 16:20:49 INFO  MapperCacheDisabler:60 - Clear tk.mybatis.mapper.genid.GenIdUtil CACHE cache.
+2020-10-27 16:20:49 INFO  MapperCacheDisabler:60 - Clear tk.mybatis.mapper.version.VersionUtil CACHE cache.
+2020-10-27 16:20:49 INFO  MapperCacheDisabler:83 - Clear EntityHelper entityTableMap cache.
+2020-10-27 16:20:49 INFO  ThreadPoolTaskScheduler:171 - Initializing ExecutorService 'taskScheduler'
+2020-10-27 16:20:49 INFO  DocumentationPluginsBootstrapper:84 - Context refreshed
+2020-10-27 16:20:49 INFO  DocumentationPluginsBootstrapper:87 - Found 1 custom documentation plugin(s)
+2020-10-27 16:20:49 INFO  ApiListingReferenceScanner:44 - Scanning for api listing references
+2020-10-27 16:20:49 INFO  CachingOperationNameGenerator:40 - Generating unique operation named: addUsingPOST_1
+2020-10-27 16:20:49 INFO  TomcatWebServer:204 - Tomcat started on port(s): 8088 (http) with context path ''
+2020-10-27 16:20:49 INFO  Application:59 - Started Application in 6.892 seconds (JVM running for 8.501)
+2020-10-27 16:21:14 INFO  DispatcherServlet:524 - Initializing Servlet 'dispatcherServlet'
+2020-10-27 16:21:14 INFO  DispatcherServlet:546 - Completed initialization in 12 ms
+2020-10-27 16:21:14 INFO  HikariDataSource:110 - HikariPool-1 - Starting...
+2020-10-27 16:21:14 INFO  HikariDataSource:123 - HikariPool-1 - Start completed.
+2020-10-27 16:21:14 INFO  ServiceLogAspect:49 - ======== 开始执行 class com.zch.service.impl.OrderServiceImpl.updateOrderStatus =========
+2020-10-27 16:21:14 INFO  ServiceLogAspect:68 - ====== 执行结束，耗时 89 毫秒 ======
+2020-10-27 16:21:41 INFO  ServiceLogAspect:49 - ======== 开始执行 class com.zch.service.impl.OrderServiceImpl.updateOrderStatus =========
+2020-10-27 16:21:41 INFO  ServiceLogAspect:68 - ====== 执行结束，耗时 7 毫秒 ======
+2020-10-27 16:22:51 INFO  Version:21 - HV000001: Hibernate Validator 6.0.16.Final
+2020-10-27 16:22:51 INFO  Application:50 - Starting Application on 2016-20190327SK with PID 8996 (G:\imooc\to-be-a-architect\project\food-mall\food-mall-api\target\classes started by Administrator in G:\imooc\to-be-a-architect\project\food-mall)
+2020-10-27 16:22:51 INFO  Application:675 - No active profile set, falling back to default profiles: default
+2020-10-27 16:22:53 WARN  ClassPathMapperScanner:44 - No MyBatis mapper was found in '[com.zch]' package. Please check your configuration.
+2020-10-27 16:22:54 INFO  PostProcessorRegistrationDelegate$BeanPostProcessorChecker:330 - Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration$$EnhancerBySpringCGLIB$$4652475c] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-10-27 16:22:54 INFO  TomcatWebServer:90 - Tomcat initialized with port(s): 8088 (http)
+2020-10-27 16:22:54 INFO  ContextLoader:296 - Root WebApplicationContext: initialization completed in 3125 ms
+2020-10-27 16:22:57 INFO  ThreadPoolTaskExecutor:171 - Initializing ExecutorService 'applicationTaskExecutor'
+2020-10-27 16:22:57 INFO  MapperCacheDisabler:60 - Clear tk.mybatis.mapper.util.MsUtil CLASS_CACHE cache.
+2020-10-27 16:22:57 INFO  MapperCacheDisabler:60 - Clear tk.mybatis.mapper.genid.GenIdUtil CACHE cache.
+2020-10-27 16:22:57 INFO  MapperCacheDisabler:60 - Clear tk.mybatis.mapper.version.VersionUtil CACHE cache.
+2020-10-27 16:22:57 INFO  MapperCacheDisabler:83 - Clear EntityHelper entityTableMap cache.
+2020-10-27 16:22:58 INFO  ThreadPoolTaskScheduler:171 - Initializing ExecutorService 'taskScheduler'
+2020-10-27 16:22:58 INFO  DocumentationPluginsBootstrapper:84 - Context refreshed
+2020-10-27 16:22:58 INFO  DocumentationPluginsBootstrapper:87 - Found 1 custom documentation plugin(s)
+2020-10-27 16:22:58 INFO  ApiListingReferenceScanner:44 - Scanning for api listing references
+2020-10-27 16:22:58 INFO  CachingOperationNameGenerator:40 - Generating unique operation named: addUsingPOST_1
+2020-10-27 16:22:58 INFO  TomcatWebServer:204 - Tomcat started on port(s): 8088 (http) with context path ''
+2020-10-27 16:22:58 INFO  Application:59 - Started Application in 7.764 seconds (JVM running for 12.959)
+2020-10-27 16:24:36 INFO  DispatcherServlet:524 - Initializing Servlet 'dispatcherServlet'
+2020-10-27 16:24:36 INFO  DispatcherServlet:546 - Completed initialization in 17 ms
+2020-10-27 16:24:36 INFO  HikariDataSource:110 - HikariPool-1 - Starting...
+2020-10-27 16:24:36 INFO  HikariDataSource:123 - HikariPool-1 - Start completed.
+2020-10-27 16:24:36 INFO  ServiceLogAspect:49 - ======== 开始执行 class com.zch.service.impl.OrderServiceImpl.updateOrderStatus =========
+2020-10-27 16:25:08 WARN  HikariPool:766 - HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=1m2s18ms710µs958ns).
+2020-10-27 16:25:08 ERROR ServiceLogAspect:64 - ====== 执行结束，耗时 32132 毫秒 ======
+2020-10-27 16:25:08 INFO  ServiceLogAspect:49 - ======== 开始执行 class com.zch.service.impl.OrderServiceImpl.updateOrderStatus =========
+2020-10-27 16:25:08 INFO  ServiceLogAspect:68 - ====== 执行结束，耗时 9 毫秒 ======
+2020-10-27 16:25:09 INFO  ThreadPoolTaskScheduler:208 - Shutting down ExecutorService 'taskScheduler'
+2020-10-27 16:25:09 INFO  ThreadPoolTaskExecutor:208 - Shutting down ExecutorService 'applicationTaskExecutor'
+2020-10-27 16:25:09 INFO  HikariDataSource:350 - HikariPool-1 - Shutdown initiated...
+2020-10-27 16:25:09 INFO  HikariDataSource:352 - HikariPool-1 - Shutdown completed.
+2020-10-27 16:25:17 INFO  Version:21 - HV000001: Hibernate Validator 6.0.16.Final
+2020-10-27 16:25:17 INFO  Application:50 - Starting Application on 2016-20190327SK with PID 7176 (G:\imooc\to-be-a-architect\project\food-mall\food-mall-api\target\classes started by Administrator in G:\imooc\to-be-a-architect\project\food-mall)
+2020-10-27 16:25:17 INFO  Application:675 - No active profile set, falling back to default profiles: default
+2020-10-27 16:25:20 WARN  ClassPathMapperScanner:44 - No MyBatis mapper was found in '[com.zch]' package. Please check your configuration.
+2020-10-27 16:25:20 INFO  PostProcessorRegistrationDelegate$BeanPostProcessorChecker:330 - Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration$$EnhancerBySpringCGLIB$$b73bfcce] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-10-27 16:25:21 INFO  TomcatWebServer:90 - Tomcat initialized with port(s): 8088 (http)
+2020-10-27 16:25:21 INFO  ContextLoader:296 - Root WebApplicationContext: initialization completed in 3742 ms
+2020-10-27 16:25:23 INFO  ThreadPoolTaskExecutor:171 - Initializing ExecutorService 'applicationTaskExecutor'
+2020-10-27 16:25:23 INFO  MapperCacheDisabler:60 - Clear tk.mybatis.mapper.util.MsUtil CLASS_CACHE cache.
+2020-10-27 16:25:23 INFO  MapperCacheDisabler:60 - Clear tk.mybatis.mapper.genid.GenIdUtil CACHE cache.
+2020-10-27 16:25:23 INFO  MapperCacheDisabler:60 - Clear tk.mybatis.mapper.version.VersionUtil CACHE cache.
+2020-10-27 16:25:23 INFO  MapperCacheDisabler:83 - Clear EntityHelper entityTableMap cache.
+2020-10-27 16:25:24 INFO  ThreadPoolTaskScheduler:171 - Initializing ExecutorService 'taskScheduler'
+2020-10-27 16:25:24 INFO  DocumentationPluginsBootstrapper:84 - Context refreshed
+2020-10-27 16:25:24 INFO  DocumentationPluginsBootstrapper:87 - Found 1 custom documentation plugin(s)
+2020-10-27 16:25:24 INFO  ApiListingReferenceScanner:44 - Scanning for api listing references
+2020-10-27 16:25:24 INFO  CachingOperationNameGenerator:40 - Generating unique operation named: addUsingPOST_1
+2020-10-27 16:25:24 INFO  TomcatWebServer:204 - Tomcat started on port(s): 8088 (http) with context path ''
+2020-10-27 16:25:24 INFO  Application:59 - Started Application in 8.013 seconds (JVM running for 10.44)
+2020-10-27 16:25:34 INFO  DispatcherServlet:524 - Initializing Servlet 'dispatcherServlet'
+2020-10-27 16:25:34 INFO  DispatcherServlet:546 - Completed initialization in 16 ms
+2020-10-27 16:27:02 WARN  DefaultHandlerExceptionResolver:198 - Resolved [org.springframework.web.HttpRequestMethodNotSupportedException: Request method 'GET' not supported]
+2020-10-27 16:27:02 INFO  ThreadPoolTaskScheduler:208 - Shutting down ExecutorService 'taskScheduler'
+2020-10-27 16:27:02 INFO  HikariDataSource:110 - HikariPool-1 - Starting...
+2020-10-27 16:27:02 INFO  ThreadPoolTaskExecutor:208 - Shutting down ExecutorService 'applicationTaskExecutor'
+2020-10-27 16:27:03 INFO  HikariDataSource:123 - HikariPool-1 - Start completed.
+2020-10-27 16:27:03 INFO  ServiceLogAspect:49 - ======== 开始执行 class com.zch.service.impl.OrderServiceImpl.updateOrderStatus =========
+2020-10-27 16:27:03 INFO  ServiceLogAspect:49 - ======== 开始执行 class com.zch.service.impl.OrderServiceImpl.updateOrderStatus =========
+2020-10-27 16:27:03 INFO  ServiceLogAspect:68 - ====== 执行结束，耗时 82 毫秒 ======
+2020-10-27 16:27:03 INFO  ServiceLogAspect:68 - ====== 执行结束，耗时 156 毫秒 ======
+2020-10-27 16:27:03 INFO  ServiceLogAspect:49 - ======== 开始执行 class com.zch.service.impl.OrderServiceImpl.updateOrderStatus =========
+2020-10-27 16:27:03 INFO  ServiceLogAspect:68 - ====== 执行结束，耗时 18 毫秒 ======
+2020-10-27 16:27:10 INFO  Version:21 - HV000001: Hibernate Validator 6.0.16.Final
+2020-10-27 16:27:11 INFO  Application:50 - Starting Application on 2016-20190327SK with PID 9544 (G:\imooc\to-be-a-architect\project\food-mall\food-mall-api\target\classes started by Administrator in G:\imooc\to-be-a-architect\project\food-mall)
+2020-10-27 16:27:11 INFO  Application:675 - No active profile set, falling back to default profiles: default
+2020-10-27 16:27:13 WARN  ClassPathMapperScanner:44 - No MyBatis mapper was found in '[com.zch]' package. Please check your configuration.
+2020-10-27 16:27:13 INFO  PostProcessorRegistrationDelegate$BeanPostProcessorChecker:330 - Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration$$EnhancerBySpringCGLIB$$5dc7247c] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-10-27 16:27:14 INFO  TomcatWebServer:90 - Tomcat initialized with port(s): 8088 (http)
+2020-10-27 16:27:14 INFO  ContextLoader:296 - Root WebApplicationContext: initialization completed in 3116 ms
+2020-10-27 16:27:17 INFO  ThreadPoolTaskExecutor:171 - Initializing ExecutorService 'applicationTaskExecutor'
+2020-10-27 16:27:17 INFO  MapperCacheDisabler:60 - Clear tk.mybatis.mapper.util.MsUtil CLASS_CACHE cache.
+2020-10-27 16:27:17 INFO  MapperCacheDisabler:60 - Clear tk.mybatis.mapper.genid.GenIdUtil CACHE cache.
+2020-10-27 16:27:17 INFO  MapperCacheDisabler:60 - Clear tk.mybatis.mapper.version.VersionUtil CACHE cache.
+2020-10-27 16:27:17 INFO  MapperCacheDisabler:83 - Clear EntityHelper entityTableMap cache.
+2020-10-27 16:27:17 INFO  ThreadPoolTaskScheduler:171 - Initializing ExecutorService 'taskScheduler'
+2020-10-27 16:27:17 INFO  DocumentationPluginsBootstrapper:84 - Context refreshed
+2020-10-27 16:27:17 INFO  DocumentationPluginsBootstrapper:87 - Found 1 custom documentation plugin(s)
+2020-10-27 16:27:17 INFO  ApiListingReferenceScanner:44 - Scanning for api listing references
+2020-10-27 16:27:17 INFO  CachingOperationNameGenerator:40 - Generating unique operation named: addUsingPOST_1
+2020-10-27 16:27:18 INFO  TomcatWebServer:204 - Tomcat started on port(s): 8088 (http) with context path ''
+2020-10-27 16:27:18 INFO  Application:59 - Started Application in 7.916 seconds (JVM running for 9.48)
+2020-10-27 16:27:47 INFO  DispatcherServlet:524 - Initializing Servlet 'dispatcherServlet'
+2020-10-27 16:27:47 INFO  DispatcherServlet:546 - Completed initialization in 15 ms
+2020-10-27 16:28:14 INFO  HikariDataSource:110 - HikariPool-1 - Starting...
+2020-10-27 16:28:14 INFO  ThreadPoolTaskScheduler:208 - Shutting down ExecutorService 'taskScheduler'
+2020-10-27 16:28:14 INFO  ThreadPoolTaskExecutor:208 - Shutting down ExecutorService 'applicationTaskExecutor'
+2020-10-27 16:28:15 INFO  HikariDataSource:123 - HikariPool-1 - Start completed.
+2020-10-27 16:28:15 INFO  ServiceLogAspect:49 - ======== 开始执行 class com.zch.service.impl.OrderServiceImpl.updateOrderStatus =========
+2020-10-27 16:28:15 INFO  ServiceLogAspect:68 - ====== 执行结束，耗时 93 毫秒 ======
+2020-10-27 16:28:21 INFO  Version:21 - HV000001: Hibernate Validator 6.0.16.Final
+2020-10-27 16:28:22 INFO  Application:50 - Starting Application on 2016-20190327SK with PID 9008 (G:\imooc\to-be-a-architect\project\food-mall\food-mall-api\target\classes started by Administrator in G:\imooc\to-be-a-architect\project\food-mall)
+2020-10-27 16:28:22 INFO  Application:675 - No active profile set, falling back to default profiles: default
+2020-10-27 16:28:24 WARN  ClassPathMapperScanner:44 - No MyBatis mapper was found in '[com.zch]' package. Please check your configuration.
+2020-10-27 16:28:24 INFO  PostProcessorRegistrationDelegate$BeanPostProcessorChecker:330 - Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration$$EnhancerBySpringCGLIB$$28fb2878] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-10-27 16:28:24 INFO  TomcatWebServer:90 - Tomcat initialized with port(s): 8088 (http)
+2020-10-27 16:28:25 INFO  ContextLoader:296 - Root WebApplicationContext: initialization completed in 2843 ms
+2020-10-27 16:28:26 INFO  ThreadPoolTaskExecutor:171 - Initializing ExecutorService 'applicationTaskExecutor'
+2020-10-27 16:28:27 INFO  MapperCacheDisabler:60 - Clear tk.mybatis.mapper.util.MsUtil CLASS_CACHE cache.
+2020-10-27 16:28:27 INFO  MapperCacheDisabler:60 - Clear tk.mybatis.mapper.genid.GenIdUtil CACHE cache.
+2020-10-27 16:28:27 INFO  MapperCacheDisabler:60 - Clear tk.mybatis.mapper.version.VersionUtil CACHE cache.
+2020-10-27 16:28:27 INFO  MapperCacheDisabler:83 - Clear EntityHelper entityTableMap cache.
+2020-10-27 16:28:27 INFO  ThreadPoolTaskScheduler:171 - Initializing ExecutorService 'taskScheduler'
+2020-10-27 16:28:27 INFO  DocumentationPluginsBootstrapper:84 - Context refreshed
+2020-10-27 16:28:27 INFO  DocumentationPluginsBootstrapper:87 - Found 1 custom documentation plugin(s)
+2020-10-27 16:28:27 INFO  ApiListingReferenceScanner:44 - Scanning for api listing references
+2020-10-27 16:28:27 INFO  CachingOperationNameGenerator:40 - Generating unique operation named: addUsingPOST_1
+2020-10-27 16:28:27 INFO  TomcatWebServer:204 - Tomcat started on port(s): 8088 (http) with context path ''
+2020-10-27 16:28:27 INFO  Application:59 - Started Application in 6.318 seconds (JVM running for 7.332)
+2020-10-27 16:29:00 INFO  DispatcherServlet:524 - Initializing Servlet 'dispatcherServlet'
+2020-10-27 16:29:00 INFO  DispatcherServlet:546 - Completed initialization in 19 ms
+2020-10-27 16:29:00 INFO  HikariDataSource:110 - HikariPool-1 - Starting...
+2020-10-27 16:29:01 INFO  HikariDataSource:123 - HikariPool-1 - Start completed.
+2020-10-27 16:29:01 INFO  ServiceLogAspect:49 - ======== 开始执行 class com.zch.service.impl.OrderServiceImpl.updateOrderStatus =========
+2020-10-27 16:29:01 INFO  ServiceLogAspect:68 - ====== 执行结束，耗时 89 毫秒 ======
+2020-10-27 16:30:13 INFO  Version:21 - HV000001: Hibernate Validator 6.0.16.Final
+2020-10-27 16:30:14 INFO  Application:50 - Starting Application on 2016-20190327SK with PID 8352 (G:\imooc\to-be-a-architect\project\food-mall\food-mall-api\target\classes started by Administrator in G:\imooc\to-be-a-architect\project\food-mall)
+2020-10-27 16:30:14 INFO  Application:675 - No active profile set, falling back to default profiles: default
+2020-10-27 16:30:15 WARN  ClassPathMapperScanner:44 - No MyBatis mapper was found in '[com.zch]' package. Please check your configuration.
+2020-10-27 16:30:16 INFO  PostProcessorRegistrationDelegate$BeanPostProcessorChecker:330 - Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration$$EnhancerBySpringCGLIB$$6effb786] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-10-27 16:30:16 INFO  TomcatWebServer:90 - Tomcat initialized with port(s): 8088 (http)
+2020-10-27 16:30:16 INFO  ContextLoader:296 - Root WebApplicationContext: initialization completed in 2555 ms
+2020-10-27 16:30:19 INFO  ThreadPoolTaskExecutor:171 - Initializing ExecutorService 'applicationTaskExecutor'
+2020-10-27 16:30:19 INFO  MapperCacheDisabler:60 - Clear tk.mybatis.mapper.util.MsUtil CLASS_CACHE cache.
+2020-10-27 16:30:19 INFO  MapperCacheDisabler:60 - Clear tk.mybatis.mapper.genid.GenIdUtil CACHE cache.
+2020-10-27 16:30:19 INFO  MapperCacheDisabler:60 - Clear tk.mybatis.mapper.version.VersionUtil CACHE cache.
+2020-10-27 16:30:19 INFO  MapperCacheDisabler:83 - Clear EntityHelper entityTableMap cache.
+2020-10-27 16:30:19 INFO  ThreadPoolTaskScheduler:171 - Initializing ExecutorService 'taskScheduler'
+2020-10-27 16:30:19 INFO  DocumentationPluginsBootstrapper:84 - Context refreshed
+2020-10-27 16:30:19 INFO  DocumentationPluginsBootstrapper:87 - Found 1 custom documentation plugin(s)
+2020-10-27 16:30:19 INFO  ApiListingReferenceScanner:44 - Scanning for api listing references
+2020-10-27 16:30:20 INFO  CachingOperationNameGenerator:40 - Generating unique operation named: addUsingPOST_1
+2020-10-27 16:30:20 INFO  TomcatWebServer:204 - Tomcat started on port(s): 8088 (http) with context path ''
+2020-10-27 16:30:20 INFO  Application:59 - Started Application in 6.722 seconds (JVM running for 9.859)
+2020-10-27 16:30:37 INFO  DispatcherServlet:524 - Initializing Servlet 'dispatcherServlet'
+2020-10-27 16:30:37 INFO  DispatcherServlet:546 - Completed initialization in 19 ms
+2020-10-27 16:31:02 INFO  HikariDataSource:110 - HikariPool-1 - Starting...
+2020-10-27 16:31:02 INFO  ThreadPoolTaskScheduler:208 - Shutting down ExecutorService 'taskScheduler'
+2020-10-27 16:31:02 INFO  ThreadPoolTaskExecutor:208 - Shutting down ExecutorService 'applicationTaskExecutor'
+2020-10-27 16:31:02 INFO  HikariDataSource:123 - HikariPool-1 - Start completed.
+2020-10-27 16:31:02 INFO  ServiceLogAspect:49 - ======== 开始执行 class com.zch.service.impl.OrderServiceImpl.updateOrderStatus =========
+2020-10-27 16:31:02 INFO  ServiceLogAspect:68 - ====== 执行结束，耗时 99 毫秒 ======
+2020-10-27 16:31:10 INFO  Version:21 - HV000001: Hibernate Validator 6.0.16.Final
+2020-10-27 16:31:11 INFO  Application:50 - Starting Application on 2016-20190327SK with PID 9880 (G:\imooc\to-be-a-architect\project\food-mall\food-mall-api\target\classes started by Administrator in G:\imooc\to-be-a-architect\project\food-mall)
+2020-10-27 16:31:11 INFO  Application:675 - No active profile set, falling back to default profiles: default
+2020-10-27 16:31:13 WARN  ClassPathMapperScanner:44 - No MyBatis mapper was found in '[com.zch]' package. Please check your configuration.
+2020-10-27 16:31:14 INFO  PostProcessorRegistrationDelegate$BeanPostProcessorChecker:330 - Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration$$EnhancerBySpringCGLIB$$f9c51a08] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-10-27 16:31:14 INFO  TomcatWebServer:90 - Tomcat initialized with port(s): 8088 (http)
+2020-10-27 16:31:14 INFO  ContextLoader:296 - Root WebApplicationContext: initialization completed in 3038 ms
+2020-10-27 16:31:20 INFO  ThreadPoolTaskExecutor:171 - Initializing ExecutorService 'applicationTaskExecutor'
+2020-10-27 16:31:21 INFO  MapperCacheDisabler:60 - Clear tk.mybatis.mapper.util.MsUtil CLASS_CACHE cache.
+2020-10-27 16:31:21 INFO  MapperCacheDisabler:60 - Clear tk.mybatis.mapper.genid.GenIdUtil CACHE cache.
+2020-10-27 16:31:21 INFO  MapperCacheDisabler:60 - Clear tk.mybatis.mapper.version.VersionUtil CACHE cache.
+2020-10-27 16:31:21 INFO  MapperCacheDisabler:83 - Clear EntityHelper entityTableMap cache.
+2020-10-27 16:31:21 INFO  ThreadPoolTaskScheduler:171 - Initializing ExecutorService 'taskScheduler'
+2020-10-27 16:31:21 INFO  DocumentationPluginsBootstrapper:84 - Context refreshed
+2020-10-27 16:31:21 INFO  DocumentationPluginsBootstrapper:87 - Found 1 custom documentation plugin(s)
+2020-10-27 16:31:21 INFO  ApiListingReferenceScanner:44 - Scanning for api listing references
+2020-10-27 16:31:22 INFO  CachingOperationNameGenerator:40 - Generating unique operation named: addUsingPOST_1
+2020-10-27 16:31:22 INFO  TomcatWebServer:204 - Tomcat started on port(s): 8088 (http) with context path ''
+2020-10-27 16:31:22 INFO  Application:59 - Started Application in 12.772 seconds (JVM running for 14.47)
+2020-10-27 16:32:03 INFO  ThreadPoolTaskScheduler:208 - Shutting down ExecutorService 'taskScheduler'
+2020-10-27 16:32:03 INFO  ThreadPoolTaskExecutor:208 - Shutting down ExecutorService 'applicationTaskExecutor'
+2020-10-27 16:32:11 INFO  Version:21 - HV000001: Hibernate Validator 6.0.16.Final
+2020-10-27 16:32:12 INFO  Application:50 - Starting Application on 2016-20190327SK with PID 8604 (G:\imooc\to-be-a-architect\project\food-mall\food-mall-api\target\classes started by Administrator in G:\imooc\to-be-a-architect\project\food-mall)
+2020-10-27 16:32:12 INFO  Application:675 - No active profile set, falling back to default profiles: default
+2020-10-27 16:32:14 WARN  ClassPathMapperScanner:44 - No MyBatis mapper was found in '[com.zch]' package. Please check your configuration.
+2020-10-27 16:32:14 INFO  PostProcessorRegistrationDelegate$BeanPostProcessorChecker:330 - Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration$$EnhancerBySpringCGLIB$$925a2ef2] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-10-27 16:32:15 INFO  TomcatWebServer:90 - Tomcat initialized with port(s): 8088 (http)
+2020-10-27 16:32:15 INFO  ContextLoader:296 - Root WebApplicationContext: initialization completed in 2668 ms
+2020-10-27 16:32:17 INFO  ThreadPoolTaskExecutor:171 - Initializing ExecutorService 'applicationTaskExecutor'
+2020-10-27 16:32:17 INFO  MapperCacheDisabler:60 - Clear tk.mybatis.mapper.util.MsUtil CLASS_CACHE cache.
+2020-10-27 16:32:17 INFO  MapperCacheDisabler:60 - Clear tk.mybatis.mapper.genid.GenIdUtil CACHE cache.
+2020-10-27 16:32:17 INFO  MapperCacheDisabler:60 - Clear tk.mybatis.mapper.version.VersionUtil CACHE cache.
+2020-10-27 16:32:17 INFO  MapperCacheDisabler:83 - Clear EntityHelper entityTableMap cache.
+2020-10-27 16:32:18 INFO  ThreadPoolTaskScheduler:171 - Initializing ExecutorService 'taskScheduler'
+2020-10-27 16:32:18 INFO  DocumentationPluginsBootstrapper:84 - Context refreshed
+2020-10-27 16:32:18 INFO  DocumentationPluginsBootstrapper:87 - Found 1 custom documentation plugin(s)
+2020-10-27 16:32:18 INFO  ApiListingReferenceScanner:44 - Scanning for api listing references
+2020-10-27 16:32:18 INFO  CachingOperationNameGenerator:40 - Generating unique operation named: addUsingPOST_1
+2020-10-27 16:32:18 INFO  TomcatWebServer:204 - Tomcat started on port(s): 8088 (http) with context path ''
+2020-10-27 16:32:18 INFO  Application:59 - Started Application in 7.416 seconds (JVM running for 9.62)
+2020-10-27 16:33:57 INFO  DispatcherServlet:524 - Initializing Servlet 'dispatcherServlet'
+2020-10-27 16:33:57 INFO  DispatcherServlet:546 - Completed initialization in 17 ms
+2020-10-27 16:34:48 INFO  HikariDataSource:110 - HikariPool-1 - Starting...
+2020-10-27 16:34:48 INFO  ThreadPoolTaskScheduler:208 - Shutting down ExecutorService 'taskScheduler'
+2020-10-27 16:34:48 INFO  ThreadPoolTaskExecutor:208 - Shutting down ExecutorService 'applicationTaskExecutor'
+2020-10-27 16:34:49 INFO  HikariDataSource:123 - HikariPool-1 - Start completed.
+2020-10-27 16:34:49 INFO  ServiceLogAspect:49 - ======== 开始执行 class com.zch.service.impl.OrderServiceImpl.updateOrderStatus =========
+2020-10-27 16:34:49 INFO  ServiceLogAspect:68 - ====== 执行结束，耗时 112 毫秒 ======
+2020-10-27 16:34:56 INFO  Version:21 - HV000001: Hibernate Validator 6.0.16.Final
+2020-10-27 16:34:57 INFO  Application:50 - Starting Application on 2016-20190327SK with PID 10048 (G:\imooc\to-be-a-architect\project\food-mall\food-mall-api\target\classes started by Administrator in G:\imooc\to-be-a-architect\project\food-mall)
+2020-10-27 16:34:57 INFO  Application:675 - No active profile set, falling back to default profiles: default
+2020-10-27 16:34:59 WARN  ClassPathMapperScanner:44 - No MyBatis mapper was found in '[com.zch]' package. Please check your configuration.
+2020-10-27 16:34:59 INFO  PostProcessorRegistrationDelegate$BeanPostProcessorChecker:330 - Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration$$EnhancerBySpringCGLIB$$3687342f] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-10-27 16:35:00 INFO  TomcatWebServer:90 - Tomcat initialized with port(s): 8088 (http)
+2020-10-27 16:35:00 INFO  ContextLoader:296 - Root WebApplicationContext: initialization completed in 2981 ms
+2020-10-27 16:35:02 INFO  ThreadPoolTaskExecutor:171 - Initializing ExecutorService 'applicationTaskExecutor'
+2020-10-27 16:35:02 INFO  MapperCacheDisabler:60 - Clear tk.mybatis.mapper.util.MsUtil CLASS_CACHE cache.
+2020-10-27 16:35:02 INFO  MapperCacheDisabler:60 - Clear tk.mybatis.mapper.genid.GenIdUtil CACHE cache.
+2020-10-27 16:35:02 INFO  MapperCacheDisabler:60 - Clear tk.mybatis.mapper.version.VersionUtil CACHE cache.
+2020-10-27 16:35:02 INFO  MapperCacheDisabler:83 - Clear EntityHelper entityTableMap cache.
+2020-10-27 16:35:03 INFO  ThreadPoolTaskScheduler:171 - Initializing ExecutorService 'taskScheduler'
+2020-10-27 16:35:03 INFO  DocumentationPluginsBootstrapper:84 - Context refreshed
+2020-10-27 16:35:03 INFO  DocumentationPluginsBootstrapper:87 - Found 1 custom documentation plugin(s)
+2020-10-27 16:35:03 INFO  ApiListingReferenceScanner:44 - Scanning for api listing references
+2020-10-27 16:35:03 INFO  CachingOperationNameGenerator:40 - Generating unique operation named: addUsingPOST_1
+2020-10-27 16:35:03 INFO  TomcatWebServer:204 - Tomcat started on port(s): 8088 (http) with context path ''
+2020-10-27 16:35:03 INFO  Application:59 - Started Application in 7.098 seconds (JVM running for 10.109)
+2020-10-27 16:35:35 INFO  DispatcherServlet:524 - Initializing Servlet 'dispatcherServlet'
+2020-10-27 16:35:35 INFO  DispatcherServlet:546 - Completed initialization in 17 ms
+2020-10-27 16:35:44 INFO  HikariDataSource:110 - HikariPool-1 - Starting...
+2020-10-27 16:35:47 INFO  HikariDataSource:123 - HikariPool-1 - Start completed.
+2020-10-27 16:35:47 INFO  ServiceLogAspect:49 - ======== 开始执行 class com.zch.service.impl.OrderServiceImpl.updateOrderStatus =========
+2020-10-27 16:36:11 ERROR ServiceLogAspect:64 - ====== 执行结束，耗时 24210 毫秒 ======
+2020-10-27 16:38:29 INFO  ThreadPoolTaskScheduler:208 - Shutting down ExecutorService 'taskScheduler'
+2020-10-27 16:38:29 INFO  ThreadPoolTaskExecutor:208 - Shutting down ExecutorService 'applicationTaskExecutor'
+2020-10-27 16:38:29 INFO  HikariDataSource:350 - HikariPool-1 - Shutdown initiated...
+2020-10-27 16:38:29 INFO  HikariDataSource:352 - HikariPool-1 - Shutdown completed.
+2020-10-27 16:38:36 INFO  Version:21 - HV000001: Hibernate Validator 6.0.16.Final
+2020-10-27 16:38:37 INFO  Application:50 - Starting Application on 2016-20190327SK with PID 6884 (G:\imooc\to-be-a-architect\project\food-mall\food-mall-api\target\classes started by Administrator in G:\imooc\to-be-a-architect\project\food-mall)
+2020-10-27 16:38:37 INFO  Application:675 - No active profile set, falling back to default profiles: default
+2020-10-27 16:38:39 WARN  ClassPathMapperScanner:44 - No MyBatis mapper was found in '[com.zch]' package. Please check your configuration.
+2020-10-27 16:38:39 INFO  PostProcessorRegistrationDelegate$BeanPostProcessorChecker:330 - Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration$$EnhancerBySpringCGLIB$$af7008fb] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-10-27 16:38:39 INFO  TomcatWebServer:90 - Tomcat initialized with port(s): 8088 (http)
+2020-10-27 16:38:39 INFO  ContextLoader:296 - Root WebApplicationContext: initialization completed in 2593 ms
+2020-10-27 16:38:41 INFO  ThreadPoolTaskExecutor:171 - Initializing ExecutorService 'applicationTaskExecutor'
+2020-10-27 16:38:41 INFO  MapperCacheDisabler:60 - Clear tk.mybatis.mapper.util.MsUtil CLASS_CACHE cache.
+2020-10-27 16:38:41 INFO  MapperCacheDisabler:60 - Clear tk.mybatis.mapper.genid.GenIdUtil CACHE cache.
+2020-10-27 16:38:41 INFO  MapperCacheDisabler:60 - Clear tk.mybatis.mapper.version.VersionUtil CACHE cache.
+2020-10-27 16:38:41 INFO  MapperCacheDisabler:83 - Clear EntityHelper entityTableMap cache.
+2020-10-27 16:38:42 INFO  ThreadPoolTaskScheduler:171 - Initializing ExecutorService 'taskScheduler'
+2020-10-27 16:38:42 INFO  DocumentationPluginsBootstrapper:84 - Context refreshed
+2020-10-27 16:38:42 INFO  DocumentationPluginsBootstrapper:87 - Found 1 custom documentation plugin(s)
+2020-10-27 16:38:42 INFO  ApiListingReferenceScanner:44 - Scanning for api listing references
+2020-10-27 16:38:42 INFO  CachingOperationNameGenerator:40 - Generating unique operation named: addUsingPOST_1
+2020-10-27 16:38:42 INFO  TomcatWebServer:204 - Tomcat started on port(s): 8088 (http) with context path ''
+2020-10-27 16:38:42 INFO  Application:59 - Started Application in 6.22 seconds (JVM running for 7.495)
+2020-10-27 16:40:18 INFO  DispatcherServlet:524 - Initializing Servlet 'dispatcherServlet'
+2020-10-27 16:40:18 INFO  DispatcherServlet:546 - Completed initialization in 21 ms
+2020-10-27 16:43:08 INFO  HikariDataSource:110 - HikariPool-1 - Starting...
+2020-10-27 16:43:08 INFO  HikariDataSource:123 - HikariPool-1 - Start completed.
+2020-10-27 16:43:08 INFO  ServiceLogAspect:49 - ======== 开始执行 class com.zch.service.impl.OrderServiceImpl.updateOrderStatus =========
+2020-10-27 16:43:08 INFO  ServiceLogAspect:68 - ====== 执行结束，耗时 77 毫秒 ======
+2020-10-27 16:43:38 INFO  ServiceLogAspect:49 - ======== 开始执行 class com.zch.service.impl.OrderServiceImpl.updateOrderStatus =========
+2020-10-27 16:43:38 INFO  ServiceLogAspect:68 - ====== 执行结束，耗时 4 毫秒 ======
+2020-10-27 16:44:09 INFO  Version:21 - HV000001: Hibernate Validator 6.0.16.Final
+2020-10-27 16:44:10 INFO  Application:50 - Starting Application on 2016-20190327SK with PID 9460 (G:\imooc\to-be-a-architect\project\food-mall\food-mall-api\target\classes started by Administrator in G:\imooc\to-be-a-architect\project\food-mall)
+2020-10-27 16:44:10 INFO  Application:675 - No active profile set, falling back to default profiles: default
+2020-10-27 16:44:12 WARN  ClassPathMapperScanner:44 - No MyBatis mapper was found in '[com.zch]' package. Please check your configuration.
+2020-10-27 16:44:12 INFO  PostProcessorRegistrationDelegate$BeanPostProcessorChecker:330 - Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration$$EnhancerBySpringCGLIB$$7cbfdfaf] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-10-27 16:44:12 INFO  TomcatWebServer:90 - Tomcat initialized with port(s): 8088 (http)
+2020-10-27 16:44:12 INFO  ContextLoader:296 - Root WebApplicationContext: initialization completed in 2421 ms
+2020-10-27 16:44:15 INFO  ThreadPoolTaskExecutor:171 - Initializing ExecutorService 'applicationTaskExecutor'
+2020-10-27 16:44:15 INFO  MapperCacheDisabler:60 - Clear tk.mybatis.mapper.util.MsUtil CLASS_CACHE cache.
+2020-10-27 16:44:15 INFO  MapperCacheDisabler:60 - Clear tk.mybatis.mapper.genid.GenIdUtil CACHE cache.
+2020-10-27 16:44:15 INFO  MapperCacheDisabler:60 - Clear tk.mybatis.mapper.version.VersionUtil CACHE cache.
+2020-10-27 16:44:15 INFO  MapperCacheDisabler:83 - Clear EntityHelper entityTableMap cache.
+2020-10-27 16:44:15 INFO  ThreadPoolTaskScheduler:171 - Initializing ExecutorService 'taskScheduler'
+2020-10-27 16:44:15 INFO  DocumentationPluginsBootstrapper:84 - Context refreshed
+2020-10-27 16:44:15 INFO  DocumentationPluginsBootstrapper:87 - Found 1 custom documentation plugin(s)
+2020-10-27 16:44:15 INFO  ApiListingReferenceScanner:44 - Scanning for api listing references
+2020-10-27 16:44:15 INFO  CachingOperationNameGenerator:40 - Generating unique operation named: addUsingPOST_1
+2020-10-27 16:44:15 INFO  TomcatWebServer:204 - Tomcat started on port(s): 8088 (http) with context path ''
+2020-10-27 16:44:15 INFO  Application:59 - Started Application in 6.331 seconds (JVM running for 7.611)
+2020-10-27 16:44:35 INFO  DispatcherServlet:524 - Initializing Servlet 'dispatcherServlet'
+2020-10-27 16:44:35 INFO  DispatcherServlet:546 - Completed initialization in 19 ms
+2020-10-27 16:47:48 INFO  Version:21 - HV000001: Hibernate Validator 6.0.16.Final
+2020-10-27 16:47:49 INFO  Application:50 - Starting Application on 2016-20190327SK with PID 5496 (G:\imooc\to-be-a-architect\project\food-mall\food-mall-api\target\classes started by Administrator in G:\imooc\to-be-a-architect\project\food-mall)
+2020-10-27 16:47:49 INFO  Application:675 - No active profile set, falling back to default profiles: default
+2020-10-27 16:47:50 WARN  ClassPathMapperScanner:44 - No MyBatis mapper was found in '[com.zch]' package. Please check your configuration.
+2020-10-27 16:47:51 INFO  PostProcessorRegistrationDelegate$BeanPostProcessorChecker:330 - Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration$$EnhancerBySpringCGLIB$$fc7f8089] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-10-27 16:47:51 INFO  TomcatWebServer:90 - Tomcat initialized with port(s): 8088 (http)
+2020-10-27 16:47:51 INFO  ContextLoader:296 - Root WebApplicationContext: initialization completed in 2262 ms
+2020-10-27 16:47:53 INFO  ThreadPoolTaskExecutor:171 - Initializing ExecutorService 'applicationTaskExecutor'
+2020-10-27 16:47:53 INFO  MapperCacheDisabler:60 - Clear tk.mybatis.mapper.util.MsUtil CLASS_CACHE cache.
+2020-10-27 16:47:53 INFO  MapperCacheDisabler:60 - Clear tk.mybatis.mapper.genid.GenIdUtil CACHE cache.
+2020-10-27 16:47:53 INFO  MapperCacheDisabler:60 - Clear tk.mybatis.mapper.version.VersionUtil CACHE cache.
+2020-10-27 16:47:53 INFO  MapperCacheDisabler:83 - Clear EntityHelper entityTableMap cache.
+2020-10-27 16:47:54 INFO  ThreadPoolTaskScheduler:171 - Initializing ExecutorService 'taskScheduler'
+2020-10-27 16:47:54 INFO  DocumentationPluginsBootstrapper:84 - Context refreshed
+2020-10-27 16:47:54 INFO  DocumentationPluginsBootstrapper:87 - Found 1 custom documentation plugin(s)
+2020-10-27 16:47:54 INFO  ApiListingReferenceScanner:44 - Scanning for api listing references
+2020-10-27 16:47:54 INFO  CachingOperationNameGenerator:40 - Generating unique operation named: addUsingPOST_1
+2020-10-27 16:47:54 INFO  TomcatWebServer:204 - Tomcat started on port(s): 8088 (http) with context path ''
+2020-10-27 16:47:54 INFO  Application:59 - Started Application in 6.483 seconds (JVM running for 7.961)
+2020-10-27 16:48:35 INFO  DispatcherServlet:524 - Initializing Servlet 'dispatcherServlet'
+2020-10-27 16:48:35 INFO  DispatcherServlet:546 - Completed initialization in 17 ms
+2020-10-27 16:50:37 INFO  Version:21 - HV000001: Hibernate Validator 6.0.16.Final
+2020-10-27 16:50:38 INFO  Application:50 - Starting Application on 2016-20190327SK with PID 9824 (G:\imooc\to-be-a-architect\project\food-mall\food-mall-api\target\classes started by Administrator in G:\imooc\to-be-a-architect\project\food-mall)
+2020-10-27 16:50:38 INFO  Application:675 - No active profile set, falling back to default profiles: default
+2020-10-27 16:50:40 WARN  ClassPathMapperScanner:44 - No MyBatis mapper was found in '[com.zch]' package. Please check your configuration.
+2020-10-27 16:50:40 INFO  PostProcessorRegistrationDelegate$BeanPostProcessorChecker:330 - Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration$$EnhancerBySpringCGLIB$$73f8c82d] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-10-27 16:50:40 INFO  TomcatWebServer:90 - Tomcat initialized with port(s): 8088 (http)
+2020-10-27 16:50:40 INFO  ContextLoader:296 - Root WebApplicationContext: initialization completed in 2831 ms
+2020-10-27 16:50:43 INFO  ThreadPoolTaskExecutor:171 - Initializing ExecutorService 'applicationTaskExecutor'
+2020-10-27 16:50:43 INFO  MapperCacheDisabler:60 - Clear tk.mybatis.mapper.util.MsUtil CLASS_CACHE cache.
+2020-10-27 16:50:43 INFO  MapperCacheDisabler:60 - Clear tk.mybatis.mapper.genid.GenIdUtil CACHE cache.
+2020-10-27 16:50:43 INFO  MapperCacheDisabler:60 - Clear tk.mybatis.mapper.version.VersionUtil CACHE cache.
+2020-10-27 16:50:43 INFO  MapperCacheDisabler:83 - Clear EntityHelper entityTableMap cache.
+2020-10-27 16:50:43 INFO  ThreadPoolTaskScheduler:171 - Initializing ExecutorService 'taskScheduler'
+2020-10-27 16:50:43 INFO  DocumentationPluginsBootstrapper:84 - Context refreshed
+2020-10-27 16:50:43 INFO  DocumentationPluginsBootstrapper:87 - Found 1 custom documentation plugin(s)
+2020-10-27 16:50:43 INFO  ApiListingReferenceScanner:44 - Scanning for api listing references
+2020-10-27 16:50:43 INFO  CachingOperationNameGenerator:40 - Generating unique operation named: addUsingPOST_1
+2020-10-27 16:50:43 INFO  TomcatWebServer:204 - Tomcat started on port(s): 8088 (http) with context path ''
+2020-10-27 16:50:43 INFO  Application:59 - Started Application in 6.671 seconds (JVM running for 7.689)
+2020-10-27 16:51:47 INFO  DispatcherServlet:524 - Initializing Servlet 'dispatcherServlet'
+2020-10-27 16:51:47 INFO  DispatcherServlet:546 - Completed initialization in 19 ms
+2020-10-27 16:51:47 INFO  HikariDataSource:110 - HikariPool-1 - Starting...
+2020-10-27 16:51:48 INFO  HikariDataSource:123 - HikariPool-1 - Start completed.
+2020-10-27 16:51:48 INFO  ServiceLogAspect:49 - ======== 开始执行 class com.zch.service.impl.OrderServiceImpl.updateOrderStatus =========
+2020-10-27 16:51:48 INFO  ServiceLogAspect:68 - ====== 执行结束，耗时 94 毫秒 ======

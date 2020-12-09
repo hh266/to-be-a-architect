@@ -1,0 +1,153 @@
+2020-10-20 14:58:14 INFO  Version:21 - HV000001: Hibernate Validator 6.0.16.Final
+2020-10-20 14:58:16 INFO  Application:50 - Starting Application on 2016-20190327SK with PID 10132 (G:\imooc\to-be-a-architect\project\food-mall\food-mall-api\target\classes started by Administrator in G:\imooc\to-be-a-architect\project\food-mall)
+2020-10-20 14:58:16 INFO  Application:675 - No active profile set, falling back to default profiles: default
+2020-10-20 14:58:18 WARN  ClassPathMapperScanner:44 - No MyBatis mapper was found in '[com.zch]' package. Please check your configuration.
+2020-10-20 14:58:19 INFO  PostProcessorRegistrationDelegate$BeanPostProcessorChecker:330 - Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration$$EnhancerBySpringCGLIB$$7c2287de] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-10-20 14:58:19 INFO  TomcatWebServer:90 - Tomcat initialized with port(s): 8088 (http)
+2020-10-20 14:58:19 INFO  ContextLoader:296 - Root WebApplicationContext: initialization completed in 3537 ms
+2020-10-20 14:58:22 INFO  ThreadPoolTaskExecutor:171 - Initializing ExecutorService 'applicationTaskExecutor'
+2020-10-20 14:58:22 INFO  MapperCacheDisabler:60 - Clear tk.mybatis.mapper.util.MsUtil CLASS_CACHE cache.
+2020-10-20 14:58:22 INFO  MapperCacheDisabler:60 - Clear tk.mybatis.mapper.genid.GenIdUtil CACHE cache.
+2020-10-20 14:58:22 INFO  MapperCacheDisabler:60 - Clear tk.mybatis.mapper.version.VersionUtil CACHE cache.
+2020-10-20 14:58:22 INFO  MapperCacheDisabler:83 - Clear EntityHelper entityTableMap cache.
+2020-10-20 14:58:23 INFO  DocumentationPluginsBootstrapper:84 - Context refreshed
+2020-10-20 14:58:23 INFO  DocumentationPluginsBootstrapper:87 - Found 1 custom documentation plugin(s)
+2020-10-20 14:58:23 INFO  ApiListingReferenceScanner:44 - Scanning for api listing references
+2020-10-20 14:58:23 INFO  TomcatWebServer:204 - Tomcat started on port(s): 8088 (http) with context path ''
+2020-10-20 14:58:23 INFO  Application:59 - Started Application in 9.449 seconds (JVM running for 12.971)
+2020-10-20 15:05:01 INFO  DispatcherServlet:524 - Initializing Servlet 'dispatcherServlet'
+2020-10-20 15:05:01 INFO  DispatcherServlet:546 - Completed initialization in 21 ms
+2020-10-20 15:05:02 INFO  ServiceLogAspect:49 - ======== 开始执行 class com.zch.service.impl.CarouselServiceImp.queryAll =========
+2020-10-20 15:05:02 INFO  ServiceLogAspect:49 - ======== 开始执行 class com.zch.service.impl.CategoryServiceImpl.queryAllRootLevelCat =========
+2020-10-20 15:05:02 INFO  HikariDataSource:110 - HikariPool-1 - Starting...
+2020-10-20 15:05:04 INFO  HikariDataSource:123 - HikariPool-1 - Start completed.
+2020-10-20 15:05:05 ERROR ServiceLogAspect:64 - ====== 执行结束，耗时 3777 毫秒 ======
+2020-10-20 15:05:05 ERROR ServiceLogAspect:64 - ====== 执行结束，耗时 3841 毫秒 ======
+2020-10-20 15:05:09 INFO  ServiceLogAspect:49 - ======== 开始执行 class com.zch.service.impl.UserServiceImpl.queryUserForLogin =========
+2020-10-20 15:05:09 INFO  ServiceLogAspect:68 - ====== 执行结束，耗时 88 毫秒 ======
+2020-10-20 15:05:09 INFO  CookieUtils:210 - ========== domainName: localhost ==========
+2020-10-20 15:05:21 INFO  ServiceLogAspect:49 - ======== 开始执行 class com.zch.service.impl.CategoryServiceImpl.queryAllRootLevelCat =========
+2020-10-20 15:05:21 INFO  ServiceLogAspect:49 - ======== 开始执行 class com.zch.service.impl.CarouselServiceImp.queryAll =========
+2020-10-20 15:05:21 INFO  ServiceLogAspect:68 - ====== 执行结束，耗时 19 毫秒 ======
+2020-10-20 15:05:21 INFO  ServiceLogAspect:68 - ====== 执行结束，耗时 37 毫秒 ======
+2020-10-20 15:05:22 INFO  ServiceLogAspect:49 - ======== 开始执行 class com.zch.service.impl.CategoryServiceImpl.getSixNewItemsLazy =========
+2020-10-20 15:05:22 INFO  ServiceLogAspect:68 - ====== 执行结束，耗时 654 毫秒 ======
+2020-10-20 15:05:28 INFO  ServiceLogAspect:49 - ======== 开始执行 class com.zch.service.impl.ItemServiceImpl.getItemById =========
+2020-10-20 15:05:28 INFO  ServiceLogAspect:68 - ====== 执行结束，耗时 9 毫秒 ======
+2020-10-20 15:05:28 INFO  ServiceLogAspect:49 - ======== 开始执行 class com.zch.service.impl.ItemServiceImpl.getItemImages =========
+2020-10-20 15:05:28 INFO  ServiceLogAspect:68 - ====== 执行结束，耗时 4 毫秒 ======
+2020-10-20 15:05:28 INFO  ServiceLogAspect:49 - ======== 开始执行 class com.zch.service.impl.ItemServiceImpl.getItemItemsSpecs =========
+2020-10-20 15:05:28 INFO  ServiceLogAspect:49 - ======== 开始执行 class com.zch.service.impl.ItemServiceImpl.getItemCommentList =========
+2020-10-20 15:05:28 INFO  ServiceLogAspect:49 - ======== 开始执行 class com.zch.service.impl.ItemServiceImpl.getItemCommentLevelCounts =========
+2020-10-20 15:05:29 INFO  ServiceLogAspect:68 - ====== 执行结束，耗时 151 毫秒 ======
+2020-10-20 15:05:29 INFO  ServiceLogAspect:49 - ======== 开始执行 class com.zch.service.impl.ItemServiceImpl.getItemCommentLevelCounts =========
+2020-10-20 15:05:29 INFO  ServiceLogAspect:68 - ====== 执行结束，耗时 3 毫秒 ======
+2020-10-20 15:05:29 INFO  ServiceLogAspect:49 - ======== 开始执行 class com.zch.service.impl.ItemServiceImpl.getItemCommentLevelCounts =========
+2020-10-20 15:05:29 INFO  ServiceLogAspect:68 - ====== 执行结束，耗时 5 毫秒 ======
+2020-10-20 15:05:29 INFO  ServiceLogAspect:68 - ====== 执行结束，耗时 338 毫秒 ======
+2020-10-20 15:05:29 INFO  ServiceLogAspect:68 - ====== 执行结束，耗时 384 毫秒 ======
+2020-10-20 15:05:29 INFO  ServiceLogAspect:49 - ======== 开始执行 class com.zch.service.impl.ItemServiceImpl.getItemParam =========
+2020-10-20 15:05:29 INFO  ServiceLogAspect:68 - ====== 执行结束，耗时 4 毫秒 ======
+2020-10-20 15:05:34 INFO  ServiceLogAspect:49 - ======== 开始执行 class com.zch.service.impl.ItemServiceImpl.queryItemsBySpecIds =========
+2020-10-20 15:05:34 INFO  ServiceLogAspect:68 - ====== 执行结束，耗时 54 毫秒 ======
+2020-10-20 15:11:48 INFO  Version:21 - HV000001: Hibernate Validator 6.0.16.Final
+2020-10-20 15:11:48 INFO  Application:50 - Starting Application on 2016-20190327SK with PID 10468 (G:\imooc\to-be-a-architect\project\food-mall\food-mall-api\target\classes started by Administrator in G:\imooc\to-be-a-architect\project\food-mall)
+2020-10-20 15:11:48 INFO  Application:675 - No active profile set, falling back to default profiles: default
+2020-10-20 15:11:50 WARN  ClassPathMapperScanner:44 - No MyBatis mapper was found in '[com.zch]' package. Please check your configuration.
+2020-10-20 15:11:51 INFO  PostProcessorRegistrationDelegate$BeanPostProcessorChecker:330 - Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration$$EnhancerBySpringCGLIB$$103ab65f] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-10-20 15:11:51 INFO  TomcatWebServer:90 - Tomcat initialized with port(s): 8088 (http)
+2020-10-20 15:11:51 INFO  ContextLoader:296 - Root WebApplicationContext: initialization completed in 2606 ms
+2020-10-20 15:11:53 INFO  ThreadPoolTaskExecutor:171 - Initializing ExecutorService 'applicationTaskExecutor'
+2020-10-20 15:11:53 INFO  MapperCacheDisabler:60 - Clear tk.mybatis.mapper.util.MsUtil CLASS_CACHE cache.
+2020-10-20 15:11:53 INFO  MapperCacheDisabler:60 - Clear tk.mybatis.mapper.genid.GenIdUtil CACHE cache.
+2020-10-20 15:11:53 INFO  MapperCacheDisabler:60 - Clear tk.mybatis.mapper.version.VersionUtil CACHE cache.
+2020-10-20 15:11:53 INFO  MapperCacheDisabler:83 - Clear EntityHelper entityTableMap cache.
+2020-10-20 15:11:54 INFO  DocumentationPluginsBootstrapper:84 - Context refreshed
+2020-10-20 15:11:54 INFO  DocumentationPluginsBootstrapper:87 - Found 1 custom documentation plugin(s)
+2020-10-20 15:11:54 INFO  ApiListingReferenceScanner:44 - Scanning for api listing references
+2020-10-20 15:11:54 INFO  TomcatWebServer:204 - Tomcat started on port(s): 8088 (http) with context path ''
+2020-10-20 15:11:54 INFO  Application:59 - Started Application in 6.353 seconds (JVM running for 7.768)
+2020-10-20 15:12:10 INFO  DispatcherServlet:524 - Initializing Servlet 'dispatcherServlet'
+2020-10-20 15:12:10 INFO  DispatcherServlet:546 - Completed initialization in 19 ms
+2020-10-20 15:15:25 INFO  Version:21 - HV000001: Hibernate Validator 6.0.16.Final
+2020-10-20 15:15:26 INFO  Application:50 - Starting Application on 2016-20190327SK with PID 9564 (G:\imooc\to-be-a-architect\project\food-mall\food-mall-api\target\classes started by Administrator in G:\imooc\to-be-a-architect\project\food-mall)
+2020-10-20 15:15:26 INFO  Application:675 - No active profile set, falling back to default profiles: default
+2020-10-20 15:15:28 WARN  ClassPathMapperScanner:44 - No MyBatis mapper was found in '[com.zch]' package. Please check your configuration.
+2020-10-20 15:15:28 INFO  PostProcessorRegistrationDelegate$BeanPostProcessorChecker:330 - Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration$$EnhancerBySpringCGLIB$$5338f222] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-10-20 15:15:28 INFO  TomcatWebServer:90 - Tomcat initialized with port(s): 8088 (http)
+2020-10-20 15:15:29 INFO  ContextLoader:296 - Root WebApplicationContext: initialization completed in 2731 ms
+2020-10-20 15:15:31 INFO  ThreadPoolTaskExecutor:171 - Initializing ExecutorService 'applicationTaskExecutor'
+2020-10-20 15:15:31 INFO  MapperCacheDisabler:60 - Clear tk.mybatis.mapper.util.MsUtil CLASS_CACHE cache.
+2020-10-20 15:15:31 INFO  MapperCacheDisabler:60 - Clear tk.mybatis.mapper.genid.GenIdUtil CACHE cache.
+2020-10-20 15:15:31 INFO  MapperCacheDisabler:60 - Clear tk.mybatis.mapper.version.VersionUtil CACHE cache.
+2020-10-20 15:15:31 INFO  MapperCacheDisabler:83 - Clear EntityHelper entityTableMap cache.
+2020-10-20 15:15:32 INFO  DocumentationPluginsBootstrapper:84 - Context refreshed
+2020-10-20 15:15:32 INFO  DocumentationPluginsBootstrapper:87 - Found 1 custom documentation plugin(s)
+2020-10-20 15:15:32 INFO  ApiListingReferenceScanner:44 - Scanning for api listing references
+2020-10-20 15:15:32 INFO  CachingOperationNameGenerator:40 - Generating unique operation named: addUsingPOST_1
+2020-10-20 15:15:32 INFO  TomcatWebServer:204 - Tomcat started on port(s): 8088 (http) with context path ''
+2020-10-20 15:15:32 INFO  Application:59 - Started Application in 7.258 seconds (JVM running for 8.725)
+2020-10-20 15:16:20 INFO  DispatcherServlet:524 - Initializing Servlet 'dispatcherServlet'
+2020-10-20 15:16:20 INFO  DispatcherServlet:546 - Completed initialization in 14 ms
+2020-10-20 15:16:20 INFO  ServiceLogAspect:49 - ======== 开始执行 class com.zch.service.impl.UserAddressServiceImpl.findAllUserAddressByUserId =========
+2020-10-20 15:16:20 INFO  HikariDataSource:110 - HikariPool-1 - Starting...
+2020-10-20 15:16:20 INFO  HikariDataSource:123 - HikariPool-1 - Start completed.
+2020-10-20 15:16:20 INFO  ServiceLogAspect:68 - ====== 执行结束，耗时 650 毫秒 ======
+2020-10-20 15:17:11 WARN  DefaultHandlerExceptionResolver:198 - Resolved [org.springframework.web.bind.MethodArgumentNotValidException: Validation failed for argument [0] in public com.zch.result.CommonResult com.zch.controller.UserAddressController.add(com.zch.pojo.bo.UserAddressBO): [Field error in object 'userAddressBO' on field 'prov': rejected value [null]; codes [NotEmpty.userAddressBO.prov,NotEmpty.prov,NotEmpty.java.lang.String,NotEmpty]; arguments [org.springframework.context.support.DefaultMessageSourceResolvable: codes [userAddressBO.prov,prov]; arguments []; default message [prov]]; default message [不能为空]] ]
+2020-10-20 15:24:49 INFO  Version:21 - HV000001: Hibernate Validator 6.0.16.Final
+2020-10-20 15:24:50 INFO  Application:50 - Starting Application on 2016-20190327SK with PID 8176 (G:\imooc\to-be-a-architect\project\food-mall\food-mall-api\target\classes started by Administrator in G:\imooc\to-be-a-architect\project\food-mall)
+2020-10-20 15:24:50 INFO  Application:675 - No active profile set, falling back to default profiles: default
+2020-10-20 15:24:51 WARN  ClassPathMapperScanner:44 - No MyBatis mapper was found in '[com.zch]' package. Please check your configuration.
+2020-10-20 15:24:52 INFO  PostProcessorRegistrationDelegate$BeanPostProcessorChecker:330 - Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration$$EnhancerBySpringCGLIB$$e67da8da] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-10-20 15:24:52 INFO  TomcatWebServer:90 - Tomcat initialized with port(s): 8088 (http)
+2020-10-20 15:24:52 INFO  ContextLoader:296 - Root WebApplicationContext: initialization completed in 2164 ms
+2020-10-20 15:24:54 INFO  ThreadPoolTaskExecutor:171 - Initializing ExecutorService 'applicationTaskExecutor'
+2020-10-20 15:24:54 INFO  MapperCacheDisabler:60 - Clear tk.mybatis.mapper.util.MsUtil CLASS_CACHE cache.
+2020-10-20 15:24:54 INFO  MapperCacheDisabler:60 - Clear tk.mybatis.mapper.genid.GenIdUtil CACHE cache.
+2020-10-20 15:24:54 INFO  MapperCacheDisabler:60 - Clear tk.mybatis.mapper.version.VersionUtil CACHE cache.
+2020-10-20 15:24:54 INFO  MapperCacheDisabler:83 - Clear EntityHelper entityTableMap cache.
+2020-10-20 15:24:54 INFO  DocumentationPluginsBootstrapper:84 - Context refreshed
+2020-10-20 15:24:54 INFO  DocumentationPluginsBootstrapper:87 - Found 1 custom documentation plugin(s)
+2020-10-20 15:24:54 INFO  ApiListingReferenceScanner:44 - Scanning for api listing references
+2020-10-20 15:24:55 INFO  CachingOperationNameGenerator:40 - Generating unique operation named: addUsingPOST_1
+2020-10-20 15:24:55 INFO  TomcatWebServer:204 - Tomcat started on port(s): 8088 (http) with context path ''
+2020-10-20 15:24:55 INFO  Application:59 - Started Application in 5.869 seconds (JVM running for 6.907)
+2020-10-20 15:26:07 INFO  DispatcherServlet:524 - Initializing Servlet 'dispatcherServlet'
+2020-10-20 15:26:07 INFO  DispatcherServlet:546 - Completed initialization in 19 ms
+2020-10-20 15:26:07 INFO  HikariDataSource:110 - HikariPool-1 - Starting...
+2020-10-20 15:26:08 INFO  HikariDataSource:123 - HikariPool-1 - Start completed.
+2020-10-20 15:26:08 INFO  ServiceLogAspect:49 - ======== 开始执行 class com.zch.service.impl.UserAddressServiceImpl.addUserAddress =========
+2020-10-20 15:26:09 INFO  ServiceLogAspect:68 - ====== 执行结束，耗时 896 毫秒 ======
+2020-10-20 15:26:09 INFO  ServiceLogAspect:49 - ======== 开始执行 class com.zch.service.impl.UserAddressServiceImpl.findAllUserAddressByUserId =========
+2020-10-20 15:26:09 INFO  ServiceLogAspect:68 - ====== 执行结束，耗时 24 毫秒 ======
+2020-10-20 15:26:19 INFO  ServiceLogAspect:49 - ======== 开始执行 class com.zch.service.impl.UserAddressServiceImpl.findAllUserAddressByUserId =========
+2020-10-20 15:26:19 INFO  ServiceLogAspect:68 - ====== 执行结束，耗时 16 毫秒 ======
+2020-10-20 15:28:43 INFO  ServiceLogAspect:49 - ======== 开始执行 class com.zch.service.impl.UserAddressServiceImpl.setDefaultUserAddress =========
+2020-10-20 15:28:44 INFO  ServiceLogAspect:68 - ====== 执行结束，耗时 205 毫秒 ======
+2020-10-20 15:28:44 INFO  ServiceLogAspect:49 - ======== 开始执行 class com.zch.service.impl.UserAddressServiceImpl.findAllUserAddressByUserId =========
+2020-10-20 15:28:44 INFO  ServiceLogAspect:68 - ====== 执行结束，耗时 8 毫秒 ======
+2020-10-20 15:29:44 INFO  ServiceLogAspect:49 - ======== 开始执行 class com.zch.service.impl.UserAddressServiceImpl.addUserAddress =========
+2020-10-20 15:29:44 INFO  ServiceLogAspect:68 - ====== 执行结束，耗时 33 毫秒 ======
+2020-10-20 15:29:44 INFO  ServiceLogAspect:49 - ======== 开始执行 class com.zch.service.impl.UserAddressServiceImpl.findAllUserAddressByUserId =========
+2020-10-20 15:29:44 INFO  ServiceLogAspect:68 - ====== 执行结束，耗时 7 毫秒 ======
+2020-10-20 15:29:50 INFO  ServiceLogAspect:49 - ======== 开始执行 class com.zch.service.impl.UserAddressServiceImpl.setDefaultUserAddress =========
+2020-10-20 15:29:50 INFO  ServiceLogAspect:68 - ====== 执行结束，耗时 247 毫秒 ======
+2020-10-20 15:29:50 INFO  ServiceLogAspect:49 - ======== 开始执行 class com.zch.service.impl.UserAddressServiceImpl.findAllUserAddressByUserId =========
+2020-10-20 15:29:50 INFO  ServiceLogAspect:68 - ====== 执行结束，耗时 9 毫秒 ======
+2020-10-20 15:29:52 INFO  ServiceLogAspect:49 - ======== 开始执行 class com.zch.service.impl.UserAddressServiceImpl.setDefaultUserAddress =========
+2020-10-20 15:29:52 INFO  ServiceLogAspect:68 - ====== 执行结束，耗时 163 毫秒 ======
+2020-10-20 15:29:52 INFO  ServiceLogAspect:49 - ======== 开始执行 class com.zch.service.impl.UserAddressServiceImpl.findAllUserAddressByUserId =========
+2020-10-20 15:29:52 INFO  ServiceLogAspect:68 - ====== 执行结束，耗时 8 毫秒 ======
+2020-10-20 15:32:41 INFO  ServiceLogAspect:49 - ======== 开始执行 class com.zch.service.impl.UserAddressServiceImpl.addUserAddress =========
+2020-10-20 15:32:41 INFO  ServiceLogAspect:68 - ====== 执行结束，耗时 23 毫秒 ======
+2020-10-20 15:32:42 INFO  ServiceLogAspect:49 - ======== 开始执行 class com.zch.service.impl.UserAddressServiceImpl.findAllUserAddressByUserId =========
+2020-10-20 15:32:42 INFO  ServiceLogAspect:68 - ====== 执行结束，耗时 9 毫秒 ======
+2020-10-20 15:32:46 INFO  ServiceLogAspect:49 - ======== 开始执行 class com.zch.service.impl.UserAddressServiceImpl.findAllUserAddressByUserId =========
+2020-10-20 15:32:46 INFO  ServiceLogAspect:68 - ====== 执行结束，耗时 26 毫秒 ======
+2020-10-20 15:32:48 INFO  ServiceLogAspect:49 - ======== 开始执行 class com.zch.service.impl.UserAddressServiceImpl.setDefaultUserAddress =========
+2020-10-20 15:32:49 INFO  ServiceLogAspect:68 - ====== 执行结束，耗时 271 毫秒 ======
+2020-10-20 15:32:49 INFO  ServiceLogAspect:49 - ======== 开始执行 class com.zch.service.impl.UserAddressServiceImpl.findAllUserAddressByUserId =========
+2020-10-20 15:32:49 INFO  ServiceLogAspect:68 - ====== 执行结束，耗时 29 毫秒 ======
+2020-10-20 15:32:51 INFO  ServiceLogAspect:49 - ======== 开始执行 class com.zch.service.impl.UserAddressServiceImpl.findAllUserAddressByUserId =========
+2020-10-20 15:32:51 INFO  ServiceLogAspect:68 - ====== 执行结束，耗时 16 毫秒 ======
+2020-10-20 15:33:11 WARN  DefaultHandlerExceptionResolver:198 - Resolved [org.springframework.web.bind.MissingServletRequestParameterException: Required String parameter 'addressId' is not present]

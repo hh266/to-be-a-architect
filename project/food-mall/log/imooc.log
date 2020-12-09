@@ -1,0 +1,39 @@
+2020-11-27 16:49:24 INFO  Version:21 - HV000001: Hibernate Validator 6.0.16.Final
+2020-11-27 16:49:25 INFO  Application:50 - Starting Application on 2016-20190327SK with PID 8052 (G:\imooc\to-be-a-architect\project\food-mall\food-mall-api\target\classes started by Administrator in G:\imooc\to-be-a-architect\project\food-mall)
+2020-11-27 16:49:25 INFO  Application:679 - The following profiles are active: dev
+2020-11-27 16:49:31 INFO  RepositoryConfigurationDelegate:244 - Multiple Spring Data modules found, entering strict repository configuration mode!
+2020-11-27 16:49:31 INFO  RepositoryConfigurationDelegate:126 - Bootstrapping Spring Data repositories in DEFAULT mode.
+2020-11-27 16:49:31 INFO  RepositoryConfigurationDelegate:182 - Finished Spring Data repository scanning in 78ms. Found 0 repository interfaces.
+2020-11-27 16:49:32 WARN  ClassPathMapperScanner:44 - No MyBatis mapper was found in '[com.zch]' package. Please check your configuration.
+2020-11-27 16:49:33 INFO  PostProcessorRegistrationDelegate$BeanPostProcessorChecker:330 - Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration$$EnhancerBySpringCGLIB$$6fedb0ca] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-11-27 16:49:34 INFO  TomcatWebServer:90 - Tomcat initialized with port(s): 8088 (http)
+2020-11-27 16:49:35 INFO  ContextLoader:296 - Root WebApplicationContext: initialization completed in 9168 ms
+2020-11-27 16:49:41 INFO  ThreadPoolTaskExecutor:171 - Initializing ExecutorService 'applicationTaskExecutor'
+2020-11-27 16:49:41 INFO  MapperCacheDisabler:60 - Clear tk.mybatis.mapper.util.MsUtil CLASS_CACHE cache.
+2020-11-27 16:49:41 INFO  MapperCacheDisabler:60 - Clear tk.mybatis.mapper.genid.GenIdUtil CACHE cache.
+2020-11-27 16:49:41 INFO  MapperCacheDisabler:60 - Clear tk.mybatis.mapper.version.VersionUtil CACHE cache.
+2020-11-27 16:49:41 INFO  MapperCacheDisabler:83 - Clear EntityHelper entityTableMap cache.
+2020-11-27 16:49:43 INFO  ThreadPoolTaskScheduler:171 - Initializing ExecutorService 'taskScheduler'
+2020-11-27 16:49:43 INFO  DocumentationPluginsBootstrapper:84 - Context refreshed
+2020-11-27 16:49:43 INFO  DocumentationPluginsBootstrapper:87 - Found 1 custom documentation plugin(s)
+2020-11-27 16:49:43 INFO  ApiListingReferenceScanner:44 - Scanning for api listing references
+2020-11-27 16:49:43 INFO  CachingOperationNameGenerator:40 - Generating unique operation named: queryUsingPOST_1
+2020-11-27 16:49:43 INFO  CachingOperationNameGenerator:40 - Generating unique operation named: addUsingPOST_1
+2020-11-27 16:49:43 INFO  CachingOperationNameGenerator:40 - Generating unique operation named: deleteUsingPOST_1
+2020-11-27 16:49:43 INFO  CachingOperationNameGenerator:40 - Generating unique operation named: updateUsingPOST_1
+2020-11-27 16:49:43 INFO  TomcatWebServer:204 - Tomcat started on port(s): 8088 (http) with context path ''
+2020-11-27 16:49:43 INFO  Application:59 - Started Application in 20.168 seconds (JVM running for 25.752)
+2020-11-27 16:53:16 INFO  DispatcherServlet:524 - Initializing Servlet 'dispatcherServlet'
+2020-11-27 16:53:16 INFO  DispatcherServlet:546 - Completed initialization in 20 ms
+2020-11-27 16:53:16 INFO  EpollProvider:68 - Starting without optional epoll library
+2020-11-27 16:53:16 INFO  KqueueProvider:70 - Starting without optional kqueue library
+2020-11-27 16:53:17 INFO  HikariDataSource:110 - HikariPool-1 - Starting...
+2020-11-27 16:53:18 INFO  HikariDataSource:123 - HikariPool-1 - Start completed.
+2020-11-27 16:53:45 INFO  CookieUtils:210 - ========== domainName: localhost ==========
+2020-11-27 16:53:45 INFO  CookieUtils:210 - ========== domainName: localhost ==========
+2020-11-27 16:57:22 INFO  ConnectionWatchdog:173 - Reconnecting, last destination was /115.159.114.72:6379
+2020-11-27 16:57:22 INFO  ReconnectionHandler:174 - Reconnected to 115.159.114.72:6379, Channel channel=0x075d7847, /192.168.1.200:54705 -> /115.159.114.72:6379
+2020-11-27 16:57:34 INFO  CookieUtils:210 - ========== domainName: localhost ==========
+2020-11-27 16:57:34 INFO  CookieUtils:210 - ========== domainName: localhost ==========
+2020-11-27 16:59:06 INFO  CookieUtils:210 - ========== domainName: localhost ==========
+2020-11-27 16:59:06 INFO  CookieUtils:210 - ========== domainName: localhost ==========
