@@ -13,6 +13,7 @@
         <module>food-mall-mapper</module>
         <module>food-mall-service</module>
         <module>food-mall-api</module>
+        <module>food-mall-search</module>
     </modules>
 
     <packaging>pom</packaging>

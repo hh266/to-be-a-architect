@@ -24,7 +24,7 @@ import java.util.List;
 @Api(value = "购物车API", tags = {"购物车相关的API"})
 @RestController
 @RequestMapping("/shopcart")
-public class ShopcartController extends BaseController{
+public class ShopcartController {
 
     @Autowired
     private RedisOperator redisOperator;
@@ -43,7 +43,7 @@ public class ShopcartController extends BaseController{
 
         // 前端用户在登录的情况下，添加商品到购物车, 后端会同步购物车到 redis 缓存
         List<ShopcartBO> shopcartBOList = new ArrayList<>();
-        String shopcatStr = redisOperator.get(FOODIE_SHOPCART + "_" + userId);
+        String shopcatStr = redisOperator.get("shopcart" + "_" + userId);
         if (StrUtil.isBlank(shopcatStr)) {
             shopcartBOList.add(shopcartBO);
         } else {
@@ -59,7 +59,7 @@ public class ShopcartController extends BaseController{
                 shopcartBOList.add(shopcartBO);
             }
         }
-        redisOperator.set(FOODIE_SHOPCART + "_" + userId, JsonUtils.objectToJson(shopcartBOList));
+        redisOperator.set("shopcart" + "_" + userId, JsonUtils.objectToJson(shopcartBOList));
 
 
         return CommonResult.success();
@@ -79,7 +79,7 @@ public class ShopcartController extends BaseController{
 
         // 同步数据到redis
         List<ShopcartBO> shopcartBOList = new ArrayList<>();
-        String shopcatStr = redisOperator.get(FOODIE_SHOPCART + "_" + userId);
+        String shopcatStr = redisOperator.get("shopcart" + "_" + userId);
         if (StrUtil.isNotBlank(shopcatStr)) {
             shopcartBOList = JsonUtils.jsonToList(shopcatStr, ShopcartBO.class);
             for (ShopcartBO bo : shopcartBOList) {
@@ -88,7 +88,7 @@ public class ShopcartController extends BaseController{
                     break;
                 }
             }
-            redisOperator.set(FOODIE_SHOPCART + "_" + userId, JsonUtils.objectToJson(shopcartBOList));
+            redisOperator.set("shopcart" + "_" + userId, JsonUtils.objectToJson(shopcartBOList));
         }
 
         return CommonResult.success();
