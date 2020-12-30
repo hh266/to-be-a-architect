@@ -9,9 +9,9 @@ import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 
 @Configuration
 public class WebMvcConfig implements WebMvcConfigurer {
-
     /**
-     *  实现静态资源的映射
+     * 实现静态资源的映射
+     *
      * @param registry
      */
     @Override
@@ -19,6 +19,4 @@ public class WebMvcConfig implements WebMvcConfigurer {
         registry.addResourceHandler("/**")
                 .addResourceLocations("classpath:/META-INF/resources/");
     }
-
-
 }
