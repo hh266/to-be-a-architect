@@ -31,9 +31,7 @@ public class SwaggerConfig {
 
     private ApiInfo apiInfo() {
         return new ApiInfoBuilder()
-                .title("SpringBoot利用Swagger构建API文档")
-                .description("使用RestFul风格, 创建人：zch")
-                .termsOfServiceUrl("https://github.com/")
+                .title("SpringBoot整合FastDFS")
                 .version("version 0.0.1")
                 .build();
     }

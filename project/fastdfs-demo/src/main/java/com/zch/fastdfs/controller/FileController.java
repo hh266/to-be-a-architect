@@ -5,14 +5,10 @@ import com.github.tobato.fastdfs.service.FastFileStorageClient;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
 
 import java.io.IOException;
-import java.io.InputStream;
 
 /**
  * @author zch
@@ -26,15 +22,20 @@ public class FileController {
     @Autowired
     private FastFileStorageClient storageClient;
 
-    @PostMapping("/upload")
+    @PostMapping("/")
     @ApiOperation(value = "文件上传", httpMethod="POST")
     public String uploadFile(MultipartFile file) throws IOException {
-        StorePath storePath = storageClient.uploadFile(file.getInputStream(), file.getSize(), file.getOriginalFilename(), null);
+
+        //获取文件后缀名
+        String[] fileNameArr = file.getOriginalFilename().split("\\.");
+        String suffix = fileNameArr[fileNameArr.length - 1];
+
+        StorePath storePath = storageClient.uploadFile(file.getInputStream(), file.getSize(), suffix, null);
         return  storePath.getFullPath();
     }
 
-    @PostMapping("/delete")
-    @ApiOperation(value = "文件删除", httpMethod="POST")
+    @DeleteMapping("/")
+    @ApiOperation(value = "文件删除", httpMethod="DELETE")
     public String deleteFile(String filePath) {
         storageClient.deleteFile(filePath);
         return "OK";
